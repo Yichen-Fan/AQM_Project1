@@ -173,6 +173,11 @@ class grid:
     def print_grid(self):
         print(self.location)
 
+# TODO
+# Randomly pick initial annihilation operator at the beginning of each iteration.
+# 1 possible way is labeling world line and pick world line at a random time spot.
+# Seeking for a better implementation.
+
 
 grid = grid()
 grid.initial_worldline(beta=12, x=10, y=10, z=10, N=2, mu = 5, epsilon=1)
@@ -181,6 +186,8 @@ nsamplestep = 50
 monte = []
 randarr = np.random.uniform(0, 1, nstep)
 
+# TODO
+# Finish the Monte Carlo iteration, and collect all information.
 for i in range(nstep):
     while not grid.stop:
         grid.move()
