@@ -11,6 +11,7 @@ class grid:
     cx, cy, cz, ct = 0, 0, 0, 0
     ix, iy, iz, it = 0, 0, 0, 0
     stop = False
+    nt = beta
 
     # Use a 100 \times 100 matrix to store all worldlines, 1 for there is a particle and 0 for no particle
     # The 0 axis for time, 1 for x axis, 2 for y axis and 3 for z axis
@@ -24,8 +25,8 @@ class grid:
         self.beta = beta
         self.epsilon = epsilon
         self.mu = mu
-        t = beta//epsilon
-        self.location = np.zeros((t, x, y, z))
+        self.nt = beta // epsilon
+        self.location = np.zeros((self.nt, x, y, z))
         self.x_size = x
         self.y_size = y
         self.z_size = z
@@ -33,8 +34,8 @@ class grid:
         self.forward = True
         if N >= (x * y * z - 1):
             raise Exception("TOO MANY PARTICLES. Either reduce number of particles or increase the spatial size")
-        for i in range(self.N):
-            self.location[:, i // 100, (i // 10) % 10, i % 10] = True
+        for j in range(self.N):
+            self.location[:, j // 100, (j // 10) % 10, j % 10] = True
 
     def random_start(self):
         ct = np.random.randint(0, self.beta)
@@ -42,76 +43,93 @@ class grid:
         return ct, cn
 
     def hop_right(self):
-        if not self.location[self.ct + 1, self.cx + 1, self.cy, self.cz]:
-            self.location[self.ct + 1, self.cx + 1, self.cy, self.cz] = True
+        nt = self.nt
+        nx = self.x_size
+        self.ct = (self.ct + 1) % nt
+        self.cx = (self.cx + 1) % nx
+        if not self.location[self.ct, self.cx, self.cy, self.cz]:
+            self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct + 1, self.cx + 1, self.cy, self.cz] = False
+            self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
-        self.ct += 1
-        self.cx += 1
 
     def hop_left(self):
-        if not self.location[self.ct + 1, self.cx - 1, self.cy, self.cz]:
-            self.location[self.ct + 1, self.cx - 1, self.cy, self.cz] = True
+        nt = self.nt
+        nx = self.x_size
+        self.ct = (self.ct + 1) % nt
+        self.cx = (self.cx - 1) % nx
+        if not self.location[self.ct, self.cx, self.cy, self.cz]:
+            self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct + 1, self.cx - 1, self.cy, self.cz] = False
+            self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
-        self.ct += 1
-        self.cx -= 1
 
     def hop_front(self):
-        if not self.location[self.ct + 1, self.cx, self.cy + 1, self.cz]:
-            self.location[self.ct + 1, self.cx, self.cy + 1, self.cz] = True
+        nt = self.nt
+        ny = self.y_size
+        self.ct = (self.ct + 1) % nt
+        self.cy = (self.cy + 1) % ny
+        if not self.location[self.ct, self.cx, self.cy, self.cz]:
+            self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct + 1, self.cx, self.cy + 1, self.cz] = False
+            self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
-        self.ct += 1
-        self.cy += 1
 
     def hop_back(self):
-        if not self.location[self.ct + 1, self.cx, self.cy - 1, self.cz]:
-            self.location[self.ct + 1, self.cx, self.cy - 1, self.cz] = True
+        nt = self.nt
+        ny = self.y_size
+        self.ct = (self.ct + 1) % nt
+        self.cy = (self.cy - 1) % ny
+        if not self.location[self.ct, self.cx, self.cy, self.cz]:
+            self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct + 1, self.cx, self.cy - 1, self.cz] = False
+            self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
-        self.ct += 1
-        self.cy -= 1
 
     def hop_up(self):
-        if not self.location[self.ct + 1, self.cx, self.cy, self.cz + 1]:
-            self.location[self.ct + 1, self.cx, self.cy, self.cz + 1] = True
+        nt = self.nt
+        nz = self.z_size
+        self.ct = (self.ct + 1) % nt
+        self.cz = (self.cz + 1) % nz
+        if not self.location[self.ct, self.cx, self.cy, self.cz]:
+            self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct + 1, self.cx, self.cy, self.cz + 1] = False
+            self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
-        self.ct += 1
-        self.cz += 1
 
     def hop_down(self):
-        if not self.location[self.ct + 1, self.cx, self.cy, self.cz - 1]:
-            self.location[self.ct + 1, self.cx, self.cy, self.cz - 1] = True
+        nt = self.nt
+        nz = self.z_size
+        self.ct = (self.ct + 1) % nt
+        self.cz = (self.cz - 1) % nz
+        if not self.location[self.ct, self.cx, self.cy, self.cz]:
+            self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct + 1, self.cx, self.cy, self.cz - 1] = False
+            self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
-        self.ct += 1
-        self.cz -= 1
 
     def no_hop(self):
+        nt = self.nt
+        self.ct = (self.ct + 1) % nt
         if not self.location[self.ct + 1, self.cx, self.cy, self.cz]:
             self.location[self.ct + 1, self.cx, self.cy, self.cz] = True
         else:
             self.location[self.ct + 1, self.cx, self.cy, self.cz] = False
             self.forward = False
-        self.ct +=1
 
     def reject(self):
         self.forward = True
 
     def reverse(self, cx, cy, cz, ct):
-        if self.location[ct - 1, cx, cy, cz]:
-            self.location[ct - 1, cx, cy, cz] = False
-            self.ct -= 1
-        elif self.location[ct - 1, cx + 1, cy, cz]:
-            self.location[ct - 1, cx + 1, cy, cz] = False
+        nt = self.nt
+        nx = self.x_size
+        ny = self.y_size
+        nz = self.z_size
+        self.ct = (self.ct - 1) % nt
+        if self.location[self.ct, cx, cy, cz]:
+            self.location[self.ct, cx, cy, cz] = False
+        elif self.location[ct, cx + 1, cy, cz]:
+            self.location[ct, cx + 1, cy, cz] = False
             self.ct -= 1
             self.cx += 1
         elif self.location[ct - 1, cx - 1, cy, cz]:
@@ -173,6 +191,17 @@ class grid:
     def print_grid(self):
         print(self.location)
 
+    def new_iter(self):
+        self.ix, self.iy, self.iz = np.random.randint(0, self.x_size, 3, int)
+        self.it = np.random.randint(0, self.nt, 1, int)
+        self.stop = False
+        if self.location[self.it, self.ix, self.iy, self.iz]:
+            self.forward = False
+        else:
+            self.location[self.it, self.ix, self.iy, self.iz] = True
+            self.forward = True
+
+
 # TODO
 # Randomly pick initial annihilation operator at the beginning of each iteration.
 # 1 possible way is labeling world line and pick world line at a random time spot.
@@ -180,8 +209,8 @@ class grid:
 
 
 grid = grid()
-grid.initial_worldline(beta=12, x=10, y=10, z=10, N=2, mu = 5, epsilon=1)
-nstep = 10000
+grid.initial_worldline(beta=12, x=10, y=10, z=10, N=2, mu=5, epsilon=1)
+nstep = 100
 nsamplestep = 50
 monte = []
 randarr = np.random.uniform(0, 1, nstep)
@@ -191,12 +220,6 @@ randarr = np.random.uniform(0, 1, nstep)
 for i in range(nstep):
     while not grid.stop:
         grid.move()
+    grid.new_iter()
     if i % nsamplestep == 0:
         monte.append(grid)
-
-
-
-
-
-
-
