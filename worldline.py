@@ -12,6 +12,7 @@ class grid:
     ix, iy, iz, it = 0, 0, 0, 0
     stop = False
     nt = beta
+    epsilon = 1
 
     # Use a 100 \times 100 matrix to store all worldlines, 1 for there is a particle and 0 for no particle
     # The 0 axis for time, 1 for x axis, 2 for y axis and 3 for z axis
@@ -19,13 +20,13 @@ class grid:
 
     def __init__(self):
         self.mu = None
-        self.epsilon = None
+        #self.epsilon = None
 
     def initial_worldline(self, beta, x, y, z, N, mu, epsilon):
         self.beta = beta
         self.epsilon = epsilon
         self.mu = mu
-        self.nt = beta // epsilon
+        self.nt = int(beta / epsilon)
         self.location = np.zeros((self.nt, x, y, z))
         self.x_size = x
         self.y_size = y
@@ -111,10 +112,10 @@ class grid:
     def no_hop(self):
         nt = self.nt
         self.ct = (self.ct + 1) % nt
-        if not self.location[self.ct + 1, self.cx, self.cy, self.cz]:
-            self.location[self.ct + 1, self.cx, self.cy, self.cz] = True
+        if not self.location[self.ct, self.cx, self.cy, self.cz]:
+            self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct + 1, self.cx, self.cy, self.cz] = False
+            self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
 
     def reject(self):
@@ -125,33 +126,28 @@ class grid:
         nx = self.x_size
         ny = self.y_size
         nz = self.z_size
-        self.ct = (self.ct - 1) % nt
-        if self.location[self.ct, cx, cy, cz]:
-            self.location[self.ct, cx, cy, cz] = False
-        elif self.location[ct, cx + 1, cy, cz]:
-            self.location[ct, cx + 1, cy, cz] = False
-            self.ct -= 1
-            self.cx += 1
-        elif self.location[ct - 1, cx - 1, cy, cz]:
-            self.location[ct - 1, cx - 1, cy, cz] = False
-            self.ct -= 1
-            self.cx -= 1
-        elif self.location[ct - 1, cx, cy + 1, cz]:
-            self.location[ct - 1, cx, cy + 1, cz] = False
-            self.ct -= 1
-            self.cy += 1
-        elif self.location[ct - 1, cx, cy - 1, cz]:
-            self.location[ct - 1, cx, cy - 1, cz] = False
-            self.ct -= 1
-            self.cy -= 1
-        elif self.location[ct - 1, cx, cy, cz + 1]:
-            self.location[ct - 1, cx, cy, cz + 1] = False
-            self.ct -= 1
-            self.cz += 1
-        elif self.location[ct - 1, cx, cy, cz - 1]:
-            self.location[ct - 1, cx, cy, cz - 1] = False
-            self.ct -= 1
-            self.cz -= 1
+        self.ct = (ct - 1) % nt
+        ct = self.ct
+        if self.location[ct, cx, cy, cz]:
+            self.location[ct, cx, cy, cz] = False
+        elif self.location[ct, (cx + 1) % nx, cy, cz]:
+            self.location[ct, (cx + 1) % nx, cy, cz] = False
+            self.cx = (cx + 1) % nx
+        elif self.location[ct, (cx - 1) % nx, cy, cz]:
+            self.location[ct, (cx - 1) % nx, cy, cz] = False
+            self.cx = (cx - 1) % nx
+        elif self.location[ct, cx, (cy + 1) % ny, cz]:
+            self.location[ct, cx, (cy + 1) % ny, cz] = False
+            self.cy = (cy + 1) % ny
+        elif self.location[ct, cx, (cy - 1) % ny, cz]:
+            self.location[ct, cx, (cy - 1) % ny, cz] = False
+            self.cy = (cy - 1) % ny
+        elif self.location[ct, cx, cy, (cz + 1) % nz]:
+            self.location[ct, cx, cy, (cz + 1) % nz] = False
+            self.cz = (cz + 1) % nz
+        elif self.location[ct, cx, cy, (cz - 1) % nz]:
+            self.location[ct, cx, cy, (cz - 1) % nz] = False
+            self.cz = (cz - 1) % nz
 
     def approve_prob(self):
         rand = np.random.uniform(0, 1)
@@ -209,17 +205,20 @@ class grid:
 
 
 grid = grid()
-grid.initial_worldline(beta=12, x=10, y=10, z=10, N=2, mu=5, epsilon=1)
-nstep = 100
-nsamplestep = 50
+grid.initial_worldline(beta=0.1, x=2, y=2, z=2, N=1, mu=10, epsilon=0.03)
+nstep = 1
+nsamplestep = 1
+nMonte = nstep // nsamplestep
 monte = []
-randarr = np.random.uniform(0, 1, nstep)
+position = np.zeros_like(grid.location)
 
 # TODO
 # Finish the Monte Carlo iteration, and collect all information.
 for i in range(nstep):
     while not grid.stop:
         grid.move()
-    grid.new_iter()
     if i % nsamplestep == 0:
-        monte.append(grid)
+        position = grid.location
+        monte.append(position)
+        print("iteration", i, "with location", position)
+    grid.new_iter()
