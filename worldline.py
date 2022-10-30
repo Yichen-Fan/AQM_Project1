@@ -1,12 +1,14 @@
 import numpy as np
+#import matplotlib.pyplot as plt
 
 
 class grid:
     beta = 12  # beta for time
-    x_size = 10  # spacial dimension for x axis
-    y_size = 10  # spacial dimension for y axis
-    z_size = 10  # spacial dimension for z axis
-    N = 2  # number of world lines
+    n_size = 2  # spacial dimension for x y z axis
+    x_size = n_size
+    y_size = n_size
+    z_size = n_size
+    N = 0  # number of initial particle number
     forward = True
     cx, cy, cz, ct = 0, 0, 0, 0
     ix, iy, iz, it = 0, 0, 0, 0
@@ -20,23 +22,24 @@ class grid:
 
     def __init__(self):
         self.mu = None
+        self.N = 0
+        self.n_size = 0
+        self.direction = None
         #self.epsilon = None
 
-    def initial_worldline(self, beta, x, y, z, N, mu, epsilon):
+    def initial_worldline(self, beta, n_size, mu, epsilon):
         self.beta = beta
         self.epsilon = epsilon
         self.mu = mu
         self.nt = int(beta / epsilon)
-        self.location = np.zeros((self.nt, x, y, z))
-        self.x_size = x
-        self.y_size = y
-        self.z_size = z
-        self.N = N
+        self.location = np.zeros((self.nt, n_size, n_size, n_size))
+        self.n_size = n_size
+        self.N = np.random.randint(0, self.n_size**3-1)
         self.forward = True
-        if N >= (x * y * z - 1):
+        if self.N > (n_size**3 - 1):
             raise Exception("TOO MANY PARTICLES. Either reduce number of particles or increase the spatial size")
         for j in range(self.N):
-            self.location[:, j // 100, (j // 10) % 10, j % 10] = True
+            self.location[:, j // (n_size**2), (j // n_size) % n_size, j % n_size] = True
 
     def random_start(self):
         ct = np.random.randint(0, self.beta)
@@ -51,7 +54,8 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct, self.cx, self.cy, self.cz] = False
+            #self.location[self.ct, self.cx, self.cy, self.cz] = False
+            self.direction = 1
             self.forward = False
 
     def hop_left(self):
@@ -62,8 +66,9 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct, self.cx, self.cy, self.cz] = False
+            #self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
+            self.direction = 2
 
     def hop_front(self):
         nt = self.nt
@@ -73,8 +78,9 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct, self.cx, self.cy, self.cz] = False
+            #self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
+            self.direction = 3
 
     def hop_back(self):
         nt = self.nt
@@ -84,8 +90,9 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct, self.cx, self.cy, self.cz] = False
+            #self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
+            self.direction = 4
 
     def hop_up(self):
         nt = self.nt
@@ -95,8 +102,9 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct, self.cx, self.cy, self.cz] = False
+            #self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
+            self.direction = 5
 
     def hop_down(self):
         nt = self.nt
@@ -106,8 +114,9 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct, self.cx, self.cy, self.cz] = False
+            #self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
+            self.direction = 6
 
     def no_hop(self):
         nt = self.nt
@@ -115,12 +124,14 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            self.location[self.ct, self.cx, self.cy, self.cz] = False
+            #self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
+            self.direction = 0
 
     def reject(self):
         self.forward = True
 
+    # TODO: Improve the algorithm. Avoid to annihilate particle in the original direction
     def reverse(self, cx, cy, cz, ct):
         nt = self.nt
         nx = self.x_size
@@ -128,26 +139,27 @@ class grid:
         nz = self.z_size
         self.ct = (ct - 1) % nt
         ct = self.ct
-        if self.location[ct, cx, cy, cz]:
+        if self.location[ct, cx, cy, cz] and self.direction != 0:
             self.location[ct, cx, cy, cz] = False
-        elif self.location[ct, (cx + 1) % nx, cy, cz]:
+        elif self.location[ct, (cx + 1) % nx, cy, cz] and self.direction != 2:
             self.location[ct, (cx + 1) % nx, cy, cz] = False
             self.cx = (cx + 1) % nx
-        elif self.location[ct, (cx - 1) % nx, cy, cz]:
+        elif self.location[ct, (cx - 1) % nx, cy, cz] and self.direction != 1:
             self.location[ct, (cx - 1) % nx, cy, cz] = False
             self.cx = (cx - 1) % nx
-        elif self.location[ct, cx, (cy + 1) % ny, cz]:
+        elif self.location[ct, cx, (cy + 1) % ny, cz] and self.direction != 4:
             self.location[ct, cx, (cy + 1) % ny, cz] = False
             self.cy = (cy + 1) % ny
-        elif self.location[ct, cx, (cy - 1) % ny, cz]:
+        elif self.location[ct, cx, (cy - 1) % ny, cz] and self.direction != 3:
             self.location[ct, cx, (cy - 1) % ny, cz] = False
             self.cy = (cy - 1) % ny
-        elif self.location[ct, cx, cy, (cz + 1) % nz]:
+        elif self.location[ct, cx, cy, (cz + 1) % nz] and self.direction != 6:
             self.location[ct, cx, cy, (cz + 1) % nz] = False
             self.cz = (cz + 1) % nz
-        elif self.location[ct, cx, cy, (cz - 1) % nz]:
+        elif self.location[ct, cx, cy, (cz - 1) % nz] and self.direction != 5:
             self.location[ct, cx, cy, (cz - 1) % nz] = False
             self.cz = (cz - 1) % nz
+        self.direction = 7
 
     def approve_prob(self):
         rand = np.random.uniform(0, 1)
@@ -205,20 +217,29 @@ class grid:
 
 
 grid = grid()
-grid.initial_worldline(beta=0.1, x=2, y=2, z=2, N=1, mu=10, epsilon=0.03)
-nstep = 1
-nsamplestep = 1
+nstep = 5000
+nsamplestep = 10
 nMonte = nstep // nsamplestep
 monte = []
 position = np.zeros_like(grid.location)
+npart = []
+energy = []
+#epsilon = [0.03, 0.02, 0.01, 0.008, 0.005, 0.002, 0.001]
+epsilon = [0.03,0.02, 0.01]
+for e in epsilon:
+    grid.initial_worldline(beta=12, n_size=2, mu=1.4, epsilon=e)
+    particle = 0
+    for i in range(nstep):
+        while not grid.stop:
+            grid.move()
+        if i % nsamplestep == 0:
+            position = grid.location[0, :, :, :]
+            particle += np.count_nonzero(position)
+        grid.new_iter()
+    particle = particle / (nstep // nsamplestep)
+    npart.append(particle)
+#npart = np.sum(monte) / (nstep // nsamplestep)
+print(npart)
 
-# TODO
-# Finish the Monte Carlo iteration, and collect all information.
-for i in range(nstep):
-    while not grid.stop:
-        grid.move()
-    if i % nsamplestep == 0:
-        position = grid.location
-        monte.append(position)
-        print("iteration", i, "with location", position)
-    grid.new_iter()
+#plt.scatter(range(50), monte)
+#plt.show()
