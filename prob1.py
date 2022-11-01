@@ -38,14 +38,13 @@ def there_is_a_cross_talk(statem,staten):
   if (np.array(statem) == np.array(staten)).all(): return False
   #states with different particle number cannot cross talk
   if np.sum(statem) != np.sum(staten): return False
-  condition = False
   for t in talk:
     for ele in talk_to[t]:
       for s in range(Nsite):
         temp_statem = np.delete(statem,[t,ele])
         temp_staten = np.delete(staten,[t,ele])
-        if (temp_statem == temp_staten).all(): condition = True
-  return condition
+        if (temp_statem == temp_staten).all(): return True
+  return False
 
 #canonical density matrix
 def canonicalrho(H,beta):
