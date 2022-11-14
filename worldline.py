@@ -1,5 +1,7 @@
 import numpy as np
-#import matplotlib.pyplot as plt
+
+
+# import matplotlib.pyplot as plt
 
 
 class grid:
@@ -26,7 +28,7 @@ class grid:
         self.n_size = 0
         self.direction = None
         self.initial = None
-        #self.epsilon = None
+        # self.epsilon = None
 
     def initial_worldline(self, beta, n_size, mu, epsilon):
         self.beta = beta
@@ -35,13 +37,13 @@ class grid:
         self.nt = int(beta / epsilon)
         self.location = np.zeros((self.nt, n_size, n_size, n_size))
         self.n_size = n_size
-        self.N = np.random.randint(1, self.n_size**3-1)
+        self.N = np.random.randint(1, self.n_size ** 3 - 1)
         self.forward = True
-        if self.N > (n_size**3 - 1):
+        if self.N > (n_size ** 3 - 1):
             raise Exception("TOO MANY PARTICLES. Either reduce number of particles or increase the spatial size")
         print(self.N)
         for j in range(self.N):
-            self.location[:, j // (n_size**2), (j // n_size) % n_size, j % n_size] = True
+            self.location[:, j // (n_size ** 2), (j // n_size) % n_size, j % n_size] = True
 
     def random_start(self):
         ct = np.random.randint(0, self.beta)
@@ -57,7 +59,7 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            #self.location[self.ct, self.cx, self.cy, self.cz] = False
+            # self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
 
     def hop_left(self):
@@ -69,7 +71,7 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            #self.location[self.ct, self.cx, self.cy, self.cz] = False
+            # self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
 
     def hop_front(self):
@@ -81,7 +83,7 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            #self.location[self.ct, self.cx, self.cy, self.cz] = False
+            # self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
 
     def hop_back(self):
@@ -93,7 +95,7 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            #self.location[self.ct, self.cx, self.cy, self.cz] = False
+            # self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
 
     def hop_up(self):
@@ -105,7 +107,7 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            #self.location[self.ct, self.cx, self.cy, self.cz] = False
+            # self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
 
     def hop_down(self):
@@ -117,7 +119,7 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            #self.location[self.ct, self.cx, self.cy, self.cz] = False
+            # self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
 
     def no_hop(self):
@@ -127,12 +129,12 @@ class grid:
         if not self.location[self.ct, self.cx, self.cy, self.cz]:
             self.location[self.ct, self.cx, self.cy, self.cz] = True
         else:
-            #self.location[self.ct, self.cx, self.cy, self.cz] = False
+            # self.location[self.ct, self.cx, self.cy, self.cz] = False
             self.forward = False
 
     def reject(self):
         self.forward = True
-        self.ct = (self.ct - 1 ) % self.nt
+        self.ct = (self.ct - 1) % self.nt
         self.approve_prob()
 
     # TODO: Improve the algorithm. Avoid to annihilate particle in the original direction
@@ -188,18 +190,18 @@ class grid:
             self.reverse(self.cx, self.cy, self.cz, self.ct)
         else:
             self.reject()
-            #self.approve_prob()
+            # self.approve_prob()
             if self.ix == self.cx and self.iy == self.cy and self.iz == self.cz and self.it == self.ct:
                 self.stop = True
 
     def move(self):
         if self.forward:
             self.approve_prob()
-            if self.ix == self.cx and self.iy == self.cy and self.iz == self.cz and self.it == self.ct and not self.initial:
+            if self.ix == self.cx and self.iy == self.cy and self.iz == self.cz and self.it == self.ct:
                 self.stop = True
         else:
             self.reject_prob()
-        if self.ix == self.cx and self.iy == self.cy and self.iz == self.cz and self.it == self.ct and self.initial:
+        if self.ix == self.cx and self.iy == self.cy and self.iz == self.cz and self.it == self.ct:
             self.stop = True
 
     def print_grid(self):
@@ -217,11 +219,9 @@ class grid:
         self.stop = False
         if self.location[self.it, self.ix, self.iy, self.iz]:
             self.forward = False
-            self.inital = True
         else:
             self.location[self.it, self.ix, self.iy, self.iz] = True
             self.forward = True
-            self.initial = False
         self.cx = self.ix
         self.cy = self.iy
         self.cz = self.iz
@@ -247,8 +247,6 @@ class grid:
             self.reject()
 
 
-
-
 # TODO
 # Randomly pick initial annihilation operator at the beginning of each iteration.
 # 1 possible way is labeling world line and pick world line at a random time spot.
@@ -260,26 +258,25 @@ nstep = 1000
 nsamplestep = 10
 nMonte = nstep // nsamplestep
 monte = []
-#position = np.zeros_like(grid.location)
+# position = np.zeros_like(grid.location)
 npart = []
 energy = []
-#epsilon = [0.03, 0.02, 0.01, 0.008, 0.005, 0.002, 0.001]
-epsilon = [0.03, 0.02]
+epsilon = [0.03, 0.02, 0.01, 0.008, 0.005, 0.002, 0.001]
+# epsilon = [0.03, 0.02]
 for e in epsilon:
-    grid.initial_worldline(beta=12, n_size=2, mu=1.4, epsilon=e)
+    grid.initial_worldline(beta=12, n_size=2, mu=2.8, epsilon=e)
     particle = 0
     for i in range(nstep):
         grid.new_iter()
         while not grid.stop:
             grid.move()
         if (i % nsamplestep == 0) and (i // nsamplestep > 30):
-            position = np.count_nonzero(grid.location[:, :, :, :]) / (12/e)
-            energy.append(position)
-            #particle += position
+            nparticle = np.count_nonzero(grid.location[:, :, :, :]) / (12 / e)
+            npart.append(nparticle)
+            # particle += position
         grid.new_iter()
-    npart.append(position)
+    #npart.append(position)
 npart = np.asarray(npart)
-print(npart / (nMonte - 3))
-print(np.mean(energy))
-#plt.scatter(range(50), monte)
-#plt.show()
+
+# plt.scatter(range(50), monte)
+# plt.show()
