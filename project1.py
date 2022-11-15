@@ -172,7 +172,8 @@ print(stdEnergy)
 print("Mean of energy:")
 print(meanEnergy)
 
-
+plt.errorbar(epsilon, meanNumber, yerr=stdNumber)
+plt.errorbar(epsilon, meanEnergy, yerr=stdEnergy)
 
 
 
