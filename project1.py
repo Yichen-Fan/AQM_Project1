@@ -3,20 +3,23 @@ import matplotlib.pyplot as plt
 
 
 class worldline:
-    def read(Ntime, Nsize, mu, epsilon):
+    def __init__(self):
+        self.beta = 12
+        self.epsilon = 1
+        self.Ntime = self.beta // self.epsilon
+        self.Nsize = 2
+        self.mu = 1.4
+        self.forward = np.zeros((self.Ntime, self.Nsize, self.Nsize, self.Nsize), dtype=int)
+        self.reverse = np.zeros((self.Ntime, self.Nsize, self.Nsize, self.Nsize), dtype=int)
+        self.arrow = 0
+
+    def read(self, Ntime, Nsize, mu, epsilon):
         self.Ntime = Ntime
         self.Nsize = Nsize
         self.mu = mu
         self.epsilon = epsilon
-
-    def __init__(self):
-        self.Ntime = 1
-        self.Nsize = 2
-        self.mu = 1.4
-        self.epsilon = 1
-        self.forward = np.zeros((Ntime, Nsize, Nsize, Nsize), dtype=int)
-        self.reverse = np.zeros((Ntime, Nsize, Nsize, Nsize), dtype=int)
-        self.arrow = 0
+        self.forward = np.zeros((self.Ntime, self.Nsize, self.Nsize, self.Nsize), dtype=int)
+        self.reverse = np.zeros((self.Ntime, self.Nsize, self.Nsize, self.Nsize), dtype=int)
 
     def move(self):
         Ntime = self.Ntime
@@ -116,7 +119,7 @@ class worldline:
         spatial_hops = np.count_nonzero(abs(self.forward) == 1) \
                        + np.count_nonzero(abs(self.forward) == 2) \
                        + np.count_nonzero(abs(self.forward) == 3)
-        return -spatial_hops / self.beta + 2 * 3 * worldline.count_number(self)
+        return -spatial_hops / self.beta + 2 * 3 * worldline.count_number()
 
 
 # Monte Carlo steps
@@ -136,22 +139,23 @@ stdNumber = []
 stdEnergy = []
 meanNumber = []
 meanEnergy = []
+
+worldline = worldline()
 for e in epsilon:
-    Ntime = beta // e  # Ntime step is beta // epsilon
-    worldline.read(Ntime, Nsize, mu=1.4, epsilon=e)
-    worldline.__init__()
+    Ntime = int(beta // e)  # Ntime step is beta // epsilon
+    worldline.read(Ntime=Ntime, Nsize=Nsize, mu=1.4, epsilon=e)
     Particlenumber = np.zeros(GroupNum)
     EnergyArr = np.zeros(GroupNum)
-    for nstep in range(Nwair):
+    for nstep in range(Nwait):
         worldline.move()
     for g in range(GroupNum):
         for i in range(GroupSize):
             for t in range(Nstep):
                 worldline.move()
-            Particlenumber[GroupNum] += worldline.count_number()
-            EnergyArrp[GroupNum] += worldline.energy()
-        Particlenumber[GroupNum] *= 1.0 / GroupSize
-        EnergyArr[GroupNum] *= 1.0 / GroupSize
+            Particlenumber[g] += worldline.count_number()
+            EnergyArr[g] += worldline.energy()
+        Particlenumber[g] *= 1.0 / GroupSize
+        EnergyArr[g] *= 1.0 / GroupSize
     # particleList.append(Particlenumber)
     # energyList.append(EnergyArr)
     stdEnergy.append(np.std(EnergyArr))
