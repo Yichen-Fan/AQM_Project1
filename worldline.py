@@ -134,7 +134,7 @@ class grid:
 
     def reject(self):
         self.forward = True
-        self.ct = (self.ct - 1) % self.nt
+        self.ct = self.ct
         self.approve_prob()
 
     # TODO: Improve the algorithm. Avoid to annihilate particle in the original direction
@@ -186,22 +186,20 @@ class grid:
 
     def reject_prob(self):
         rand = np.random.uniform(0, 1)
-        if rand < np.exp(- self.mu * self.epsilon):
-            self.reverse(self.cx, self.cy, self.cz, self.ct)
-        else:
+        self.reverse(self.cx, self.cy, self.cz, self.ct)
+        if rand < np.exp(1 - self.mu * self.epsilon):
             self.reject()
-            # self.approve_prob()
             if self.ix == self.cx and self.iy == self.cy and self.iz == self.cz and self.it == self.ct:
                 self.stop = True
 
     def move(self):
         if self.forward:
             self.approve_prob()
-            if self.ix == self.cx and self.iy == self.cy and self.iz == self.cz and self.it == self.ct:
+            if self.ix == self.cx and self.iy == self.cy and self.iz == self.cz and self.it == self.ct and self.initial:
                 self.stop = True
         else:
             self.reject_prob()
-        if self.ix == self.cx and self.iy == self.cy and self.iz == self.cz and self.it == self.ct:
+        if self.ix == self.cx and self.iy == self.cy and self.iz == self.cz and self.it == self.ct and not self.initial:
             self.stop = True
 
     def print_grid(self):
@@ -219,9 +217,11 @@ class grid:
         self.stop = False
         if self.location[self.it, self.ix, self.iy, self.iz]:
             self.forward = False
+            self.initial = False
         else:
             self.location[self.it, self.ix, self.iy, self.iz] = True
             self.forward = True
+            self.initial = True
         self.cx = self.ix
         self.cy = self.iy
         self.cz = self.iz
@@ -254,29 +254,35 @@ class grid:
 
 
 grid = grid()
-nstep = 1000
-nsamplestep = 10
+nstep = 100
+nsamplestep = 1
+nsamplegroup = 100
 nMonte = nstep // nsamplestep
 monte = []
 # position = np.zeros_like(grid.location)
-npart = []
+nparts = []
 energy = []
-epsilon = [0.03, 0.02, 0.01, 0.008, 0.005, 0.002, 0.001]
-# epsilon = [0.03, 0.02]
+#epsilon = [0.03, 0.02, 0.01, 0.008, 0.005, 0.002, 0.001]
+epsilon = [0.001]
 for e in epsilon:
-    grid.initial_worldline(beta=12, n_size=2, mu=2.8, epsilon=e)
+    grid.initial_worldline(beta=12, n_size=2, mu=1.4, epsilon=e)
     particle = 0
+    npart = []
+    nsize = 0
     for i in range(nstep):
         grid.new_iter()
         while not grid.stop:
             grid.move()
-        if (i % nsamplestep == 0) and (i // nsamplestep > 30):
-            nparticle = np.count_nonzero(grid.location[:, :, :, :]) / (12 / e)
+        if (i % nsamplestep == 0) and (i // nsamplestep > 1):
+            nparticle = np.count_nonzero(grid.location[0, :, :, :])
             npart.append(nparticle)
+            nsize += 1
             # particle += position
         grid.new_iter()
+        nparts.append(npart)
     #npart.append(position)
-npart = np.asarray(npart)
+nparts = np.asarray(nparts)
+print(np.sum(npart)/nsize)
 
 # plt.scatter(range(50), monte)
 # plt.show()
