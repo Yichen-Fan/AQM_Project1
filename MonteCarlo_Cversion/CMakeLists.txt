@@ -3,4 +3,4 @@ project(MonteCarlo_Cversion C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(MonteCarlo_Cversion main.c worldline.h worldline.c util.h util.c move.c)
+add_executable(MonteCarlo_Cversion source/main.c source/worldline.h source/worldline.c source/util.h source/util.c source/move.c)
