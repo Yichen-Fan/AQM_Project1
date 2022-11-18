@@ -5,7 +5,7 @@
 
 
 double RANDF(){
-    return (double) (rand() % 10000000) / 10000000;
+    return (double) (rand() % 100000000) / 100000000;
 }
 int RANDI(int ceil){
     return (int) (rand() % ceil);

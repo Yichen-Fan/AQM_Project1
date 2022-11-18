@@ -22,7 +22,14 @@ void generate_worldline(int N_size, double beta, double epsilon, int *wldline){
 
 int random_start(int totsize, int *wldline) {
     int randNum = RANDI(totsize);
-    printf("Rand%d", randNum);
+    if (wldline[randNum]){
+        wldline[randNum] = 0;
+        return randNum;
+    }
+    else{
+        wldline[randNum] = 1;
+        return randNum + totsize;
+    }
 }
 
 

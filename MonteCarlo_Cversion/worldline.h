@@ -28,6 +28,24 @@ void generate_worldline(int N_size, double beta, double epsilon, int *wldline);
  * random_start: This function pick a random point within wldline array.
  * totsize: Input. total size of mtx
  * wldline: Input. The ptr points to the world line matrix
- * return: true if there is no particle false if there is a particle.
+ * return: index in the flatten matrix. ct \times cz \times cy \times cx
  */
 int random_start(int totsize, int *wldline);
+/*
+ * move: Determine the direction of moving when the time arrow is positive.
+ * epsilon: double. The magnitude of time step
+ * return value: int. \pm 1 for movement in x axis; \pm 2 for movement in y axis; \pm 3 for movement in z axis
+ */
+int move(double epsilon);
+/*
+ * update: Function used to update the index after each movement.
+ * direction: input. Direction of movement;
+ * pindex: input, and output. The pointer points to the current index. The index will be updated in this function;
+ */
+void update(int direction, int *pindex);
+/*
+ *  reverse: Similar to update function, but time arrow is negative here.
+ *  direction: input. direction of movement in space;
+ *  pindex: input and output. Pointer points to current location. Will be updatetd in this function;
+ */
+void reverse(int direction, int *pindex);
