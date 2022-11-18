@@ -27,54 +27,67 @@ int move(double epsilon){
     return direction;
 }
 
-void update(int direction, int* pindex) {
+void update(int direction, int N_size, int Ntime, int* pindex) {
     int old_index = *pindex;
+    int ctime = (int) (old_index / 8);
+    int cx, cy, cz;
+    cx = (old_index - ctime * 8) % N_size;
+    cy = (int) ((old_index - ctime * 8) / N_size) % N_size;
+    cz = (int) ((old_index - ctime * 8) / (N_size * N_size)) % N_size;
+    ctime = (ctime + 1) % Ntime;
     switch (direction) {
         case 1:
-
+            cx = (cx + 1) % N_size;
             break;
         case 2:
-
+            cy = (cy + 1) % N_size;
             break;
         case 3:
-
+            cz = (cz + 1) % N_size;
             break;
         case -1:
-
+            cx = (cx - 1) % N_size;
             break;
         case -2:
-
+            cy = (cy - 1) % N_size;
             break;
         case -3:
-
+            cz = (cz - 1) % N_size;
             break;
         default:
             break;
     }
+    *pindex = ctime * 8 + cz * 4 + cy * 2 + cx;
 }
-void reverse(int direction, int *pindex){
-    int oldindex = *pindex;
+void reverse(int direction, int N_size, int Ntime, int *pindex){
+    int old_index = *pindex;
+    int ctime = (int) (old_index / 8);
+    int cx, cy, cz;
+    cx = (old_index - ctime * 8) % N_size;
+    cy = (int) ((old_index - ctime * 8) / N_size) % N_size;
+    cz = (int) ((old_index - ctime * 8) / (N_size * N_size)) % N_size;
+    ctime = (ctime + 1) % Ntime;
     switch (direction) {
         case 1:
-
+            cx = (cx + 1) % N_size;
             break;
         case 2:
-
+            cy = (cy + 1) % N_size;
             break;
         case 3:
-
+            cz = (cz + 1) % N_size;
             break;
         case -1:
-
+            cx = (cx - 1) % N_size;
             break;
         case -2:
-
+            cy = (cy - 1) % N_size;
             break;
         case -3:
-
+            cz = (cz - 1) % N_size;
             break;
         default:
-
             break;
     }
+    *pindex = ctime * 8 + cz * 4 + cy * 2 + cx;
 }

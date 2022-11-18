@@ -42,10 +42,10 @@ int move(double epsilon);
  * direction: input. Direction of movement;
  * pindex: input, and output. The pointer points to the current index. The index will be updated in this function;
  */
-void update(int direction, int *pindex);
+void update(int direction, int Nsize, int Ntime, int *pindex);
 /*
  *  reverse: Similar to update function, but time arrow is negative here.
  *  direction: input. direction of movement in space;
  *  pindex: input and output. Pointer points to current location. Will be updatetd in this function;
  */
-void reverse(int direction, int *pindex);
+void reverse(int direction, int Nsize, int Ntime, int *pindex);

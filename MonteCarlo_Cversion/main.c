@@ -7,6 +7,7 @@ int main() {
     int N_size = 2;
     double beta = 12;
     double epsilon = 0.03;
+    double mu = 1.4;
     int *wldline = NULL;
     int totsize = (int) (beta / epsilon) * N_size * N_size * N_size;
     int arrow = 1;      // Direction of time arrow
@@ -19,9 +20,7 @@ int main() {
     index = index % totsize;
 
     int *forward = NULL;
-    int *backward = NULL;
     forward = calloc(totsize, sizeof(int));
-    backward = calloc(totsize, sizeof(int));
     int direction = 0;
 
     while (1){
@@ -56,6 +55,12 @@ int main() {
                 wldline[index] = 0;
             }
             reverse(direction, &index);
+            forward[index] = 0;
+
+            // Reject prob
+            if (RANDF() > exp(-mu * epsilon)){
+                arrow = 1;
+            }
         }
     }
 
