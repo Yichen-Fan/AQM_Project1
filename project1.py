@@ -40,7 +40,9 @@ class worldline:
             # Time is going backward
             self.arrow = -1
         collision = 0
+        m = 0
         while True:
+            m = m + 1
             # Time forward
             if self.arrow == 1:
                 # In three dimension space, epsilon for each direction. There are six direction in total
@@ -109,6 +111,10 @@ class worldline:
                 # Reject reverse motion according to chemical potential
                 if np.random.random() < (1 - np.exp(-mu * epsilon)):
                     self.arrow = 1
+        print("m = ", m)
+        print("non zeros: ", np.count_nonzero(self.forward[1, :, :, :]))
+        print("non zeros: ", np.count_nonzero(self.forward[5, :, :, :]))
+        print("non zeros: ", np.count_nonzero(self.reverse[200, :, :, :]))
 
     def count_number(self):
         # Since particle number conserved within configuration, we pick the first time step
@@ -123,16 +129,16 @@ class worldline:
 
 
 # Monte Carlo steps
-Nstep = 10  # Steps between each sampling
-NMonte = 1000  # Number of total monte carlo size
-GroupNum = 50  # Number of groups use to calculate stdev
+Nstep = 1  # Steps between each sampling
+NMonte = 1  # Number of total monte carlo size
+GroupNum = 1  # Number of groups use to calculate stdev
 GroupSize = NMonte // GroupNum  # Number of elements in each group
 Nwait = 30  # Number of steps before collecting data
 
 Nsize = 2  # Size of spatial coordinate
 beta = 12  # Beta
 
-epsilon = np.asarray([0.03, 0.02, 0.01, 0.008, 0.005, 0.002, 0.001])
+epsilon = np.asarray([0.03])
 particleList = []
 energyList = []
 stdNumber = []
@@ -152,6 +158,7 @@ for e in epsilon:
         for i in range(GroupSize):
             for t in range(Nstep):
                 worldline.move()
+
             Particlenumber[g] += worldline.count_number()
             EnergyArr[g] += worldline.energy()
         Particlenumber[g] *= 1.0 / GroupSize

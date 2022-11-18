@@ -17,7 +17,6 @@
  * beta: Input. Imaginary time. Must be positive and larger than epsilon.
  * epsilon: Input. The magnitude of time step. Must be positive, and smaller than beta. The total number of time steps
  * is int (beta/ epsilon).
- * totsize: Output. The total size of worldline matrix. totsize = N_size^3 * int(beta/epsilon)
  * wldline: Output. Would be a flatten matrix with dimension of N_size^3 * int(beta/epsilon)
  * Initial value of wldline would be a flatten zero matrix
  *
@@ -30,7 +29,7 @@ void generate_worldline(int N_size, double beta, double epsilon, int *wldline);
  * wldline: Input. The ptr points to the world line matrix
  * return: index in the flatten matrix. ct \times cz \times cy \times cx
  */
-int random_start(int totsize, int *wldline);
+int random_start(int totsize);
 /*
  * move: Determine the direction of moving when the time arrow is positive.
  * epsilon: double. The magnitude of time step

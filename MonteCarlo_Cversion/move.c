@@ -29,11 +29,13 @@ int move(double epsilon){
 
 void update(int direction, int N_size, int Ntime, int* pindex) {
     int old_index = *pindex;
-    int ctime = (int) (old_index / 8);
+    int Nsizes = N_size * N_size;
+    int Nsizec = N_size * N_size * N_size;
+    int ctime = (int) (old_index / Nsizec);
     int cx, cy, cz;
-    cx = (old_index - ctime * 8) % N_size;
-    cy = (int) ((old_index - ctime * 8) / N_size) % N_size;
-    cz = (int) ((old_index - ctime * 8) / (N_size * N_size)) % N_size;
+    cx = (old_index - ctime * Nsizec) % N_size;
+    cy = (int) ((old_index - ctime * Nsizec) % Nsizes) / N_size;
+    cz = (int) (old_index - ctime * Nsizec) % (Nsizec) / Nsizes;
     ctime = (ctime + 1) % Ntime;
     switch (direction) {
         case 1:
@@ -46,13 +48,13 @@ void update(int direction, int N_size, int Ntime, int* pindex) {
             cz = (cz + 1) % N_size;
             break;
         case -1:
-            cx = (cx - 1) % N_size;
+            cx = (cx - 1 + N_size) % N_size;
             break;
         case -2:
-            cy = (cy - 1) % N_size;
+            cy = (cy - 1 + N_size) % N_size;
             break;
         case -3:
-            cz = (cz - 1) % N_size;
+            cz = (cz - 1 + N_size) % N_size;
             break;
         default:
             break;
@@ -61,12 +63,14 @@ void update(int direction, int N_size, int Ntime, int* pindex) {
 }
 void reverse(int direction, int N_size, int Ntime, int *pindex){
     int old_index = *pindex;
-    int ctime = (int) (old_index / 8);
+    int Nsizes = N_size * N_size;
+    int Nsizec = N_size * N_size * N_size;
+    int ctime = (int) (old_index / Nsizec);
     int cx, cy, cz;
-    cx = (old_index - ctime * 8) % N_size;
-    cy = (int) ((old_index - ctime * 8) / N_size) % N_size;
-    cz = (int) ((old_index - ctime * 8) / (N_size * N_size)) % N_size;
-    ctime = (ctime + 1) % Ntime;
+    cx = (old_index - ctime * Nsizec) % N_size;
+    cy = (int) ((old_index - ctime * Nsizec) % Nsizes) / N_size;
+    cz = (int) (old_index - ctime * Nsizec) % (Nsizec) / Nsizes;
+    ctime = (ctime - 1 + Ntime) % Ntime;
     switch (direction) {
         case 1:
             cx = (cx + 1) % N_size;
@@ -78,13 +82,13 @@ void reverse(int direction, int N_size, int Ntime, int *pindex){
             cz = (cz + 1) % N_size;
             break;
         case -1:
-            cx = (cx - 1) % N_size;
+            cx = (cx - 1 + N_size) % N_size;
             break;
         case -2:
-            cy = (cy - 1) % N_size;
+            cy = (cy - 1 + N_size) % N_size;
             break;
         case -3:
-            cz = (cz - 1) % N_size;
+            cz = (cz - 1 + N_size) % N_size;
             break;
         default:
             break;

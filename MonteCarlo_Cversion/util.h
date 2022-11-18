@@ -11,3 +11,4 @@
 
 double RANDF();
 int RANDI(int floor);
+int count_non_zero(int N_size, int *wldline);
