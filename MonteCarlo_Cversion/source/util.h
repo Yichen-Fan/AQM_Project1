@@ -12,3 +12,6 @@
 double RANDF();
 int RANDI(int floor);
 int count_non_zero(int N_size, int *wldline);
+double cal_energy(int totsize, double beta, int *forward);
+void print_arr(int size, double* pArr, char* pstr);
+

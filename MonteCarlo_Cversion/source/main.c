@@ -24,74 +24,43 @@ int main() {
     forward = calloc(totsize, sizeof(int));
     int direction = 0;
 
-    int nWait = 10000;
-    double num = 0;
-    double num3 = 0;
+    int nWait = 1000;               // Discard the first few iteration to wait until equilibrium state.
+    int nSweep = 500;              // Total number of groups in the Monte Carlo simulation
+    int BlockSize = 1000;           // Size of each block. Mean value within block would be calculated
 
-    // int nGroup = 10000;
-    // int nElem = 1000;
+
+    // Define and calloc space for array
+    double* numArrMean;
+    double* eneArrMean;
+    numArrMean = calloc(nSweep, sizeof(double));
+    eneArrMean = calloc(nSweep, sizeof(double));
 
     for (int j = 0; j < nWait; j++) {
-        index = random_start(totsize);
-        if (forward[index]){
-            arrow = 0;
-        }
-        else {
-            arrow = 1;
-        }
-        collision = 0;
-        int i = 0;
-        int temp = index;
-        while (1) {
-            i++;
-            temp = index;
-            if (arrow) {
-                direction = move(epsilon);
-                forward[index] = direction;
-                update(direction, N_size, Ntime, &index);
-                if (backward[index]) {
-                    collision = backward[index];
-                    arrow = 0;
-                }
-                backward[index] = -direction;
-                if (!collision && forward[index]) {
-                    break;
-                }
-            }
-            else {
-                if (backward[index] == 0) {
-                    break;
-                }
-                if (collision) {
-                    direction = collision;
-                    collision = 0;
-                } else {
-                    direction = backward[index];
-                    backward[index] = 0;
-                }
-                reverse(direction, N_size, Ntime, &index);
-                if (forward[index] != 0)
-                {
-                    // printf("ERROR\n");
-                }
-                forward[index] = 0;
-
-                // Reject prob
-                if (RANDF() < 1.0 - exp(-mu * epsilon)) {
-                    arrow = 1;
-                }
-            }
-        }
-        int num1 = count_non_zero(N_size, backward);
-        num += num1;
+        monte(N_size, Ntime, epsilon, mu, forward, backward);
     }
-    num = num/ nWait;
-    num3 = num3 / nWait;
-    printf("avg 1:%f\n",num);
+    for (int b = 0; b < nSweep; b++){
+        double num = 0;
+        double energy = 0;
+        for (int g = 0; g < BlockSize; g++) {
+            monte(N_size, Ntime, epsilon, mu, forward, backward);
+            num += count_non_zero(N_size, forward);
+            energy += cal_energy(totsize, beta, forward);
+        }
+        numArrMean[b] = num / BlockSize;
+        eneArrMean[b] = energy / BlockSize;
+    }
+    printf("Current epsilon value: %5f\n", epsilon);
+    printf("Current lattice size: %d\n", N_size);
+    printf("Current chemical potential: %3f\n", mu);
+    print_arr(nSweep, numArrMean, "Particle number");
+    print_arr(nSweep, eneArrMean, "Energy");
+
     ltime = time(NULL);
     printf("Finish %d iterations at %s\n", nWait, asctime(localtime(&ltime)));
 
     free(backward);
+    free(numArrMean);
+    free(eneArrMean);
     free(forward);
     return 0;
 }

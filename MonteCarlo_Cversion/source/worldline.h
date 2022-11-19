@@ -48,3 +48,7 @@ void update(int direction, int Nsize, int Ntime, int *pindex);
  *  pindex: input and output. Pointer points to current location. Will be updatetd in this function;
  */
 void reverse(int direction, int Nsize, int Ntime, int *pindex);
+/*
+ *
+ */
+void monte(int N_size, int Ntime, double epsilon, double mu, int *forward, int *backward);
