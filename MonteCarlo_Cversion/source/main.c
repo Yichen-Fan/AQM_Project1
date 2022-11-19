@@ -24,9 +24,9 @@ int main() {
     forward = calloc(totsize, sizeof(int));
     int direction = 0;
 
-    int nWait = 1000;               // Discard the first few iteration to wait until equilibrium state.
-    int nSweep = 500;              // Total number of groups in the Monte Carlo simulation
-    int BlockSize = 1000;           // Size of each block. Mean value within block would be calculated
+    int nWait = 10000;                   // Discard the first few iteration to wait until equilibrium state.
+    int nSweep = 10;                 // Total number of groups in the Monte Carlo simulation
+    int BlockSize = 50;               // Size of each block. Mean value within block would be calculated
 
 
     // Define and calloc space for array
@@ -42,9 +42,13 @@ int main() {
         double num = 0;
         double energy = 0;
         for (int g = 0; g < BlockSize; g++) {
+            double ene;
+            int number;
             monte(N_size, Ntime, epsilon, mu, forward, backward);
-            num += count_non_zero(N_size, forward);
-            energy += cal_energy(totsize, beta, forward);
+            number = count_non_zero(N_size, forward);
+            ene = cal_energy(totsize, beta, number, forward);
+            num += number;
+            energy += ene;
         }
         numArrMean[b] = num / BlockSize;
         eneArrMean[b] = energy / BlockSize;
@@ -56,7 +60,8 @@ int main() {
     print_arr(nSweep, eneArrMean, "Energy");
 
     ltime = time(NULL);
-    printf("Finish %d iterations at %s\n", nWait, asctime(localtime(&ltime)));
+    int nTotIter = nWait + nSweep * BlockSize;
+    printf("Finish %d iterations at %s\n", nTotIter, asctime(localtime(&ltime)));
 
     free(backward);
     free(numArrMean);

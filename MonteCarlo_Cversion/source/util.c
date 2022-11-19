@@ -22,12 +22,13 @@ int count_non_zero(int N_size, int *wldline){
     return num;
 }
 
-double cal_energy(int totsize, double beta, int *forward){
+double cal_energy(int totsize, double beta, int num, int *forward){
     int hop = 0;
     int noHop = 0;
+    //int totsize; // = N_size * N_size * N_size;
     int i;
     for (i = 0; i < totsize; i++){
-        switch (forward[i]) {
+        switch ((int) abs(forward[i])) {
             case 1:
                 hop++;
                 break;
@@ -37,21 +38,18 @@ double cal_energy(int totsize, double beta, int *forward){
             case 3:
                 hop++;
                 break;
-            case 4:
-                noHop++;
-                break;
             default:
                 break;
         }
     }
-    double energy = -hop / beta + 6 * noHop;
+    double energy = -(double) (hop / beta) + 6 * num;
     return energy;
 }
 
 void print_arr(int size, double* pArr, char* pstr){
     printf("%s:\n", pstr);
     for (int i = 0; i < size; i++){
-        printf("%f\n", pArr[i]);
+        printf("%7f\n", pArr[i]);
     }
     printf("End of array.\n");
 }
