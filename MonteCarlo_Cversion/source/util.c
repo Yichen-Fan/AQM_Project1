@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 double RANDF(){
-    return (double) (rand() % 100000000) / 100000000;
+    return (double) (rand() % RAND_MAX) / RAND_MAX;
 }
 
 int RANDI(int ceil){
@@ -28,7 +28,7 @@ double cal_energy(int totsize, double beta, int num, int *forward){
     //int totsize; // = N_size * N_size * N_size;
     int i;
     for (i = 0; i < totsize; i++){
-        switch ((int) abs(forward[i])) {
+        switch (forward[i]) {
             case 1:
                 hop++;
                 break;
@@ -36,6 +36,15 @@ double cal_energy(int totsize, double beta, int num, int *forward){
                 hop++;
                 break;
             case 3:
+                hop++;
+                break;
+            case -1:
+                hop++;
+                break;
+            case -2:
+                hop++;
+                break;
+            case -3:
                 hop++;
                 break;
             default:

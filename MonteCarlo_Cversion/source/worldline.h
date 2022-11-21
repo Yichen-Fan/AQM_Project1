@@ -6,7 +6,6 @@
 #define MONTECARLO_CVERSION_WORLDLINE_H
 
 #endif //MONTECARLO_CVERSION_WORLDLINE_H
-#include <math.h>
 #include <time.h>
 #include <stdlib.h>
 #include <printf.h>

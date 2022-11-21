@@ -2,6 +2,7 @@
 // Created by Ethan  Fan  on 11/17/22.
 //
 #include "worldline.h"
+#include <math.h>
 
 int move(double epsilon) {
     double frand = RANDF();
@@ -105,6 +106,7 @@ void monte(int N_size, int Ntime, double epsilon, double mu, int *forward, int *
     int collision = 0;
     // int i = 0;
     int direction;
+    double e = 2.7182818284590452353602874713527;
     while (1) {
         // i++;
         if (arrow) {
