@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "worldline.h"
 #include "read_inp.h"
+#include "map.h"
 
 int main(int argc, char *argv[]) {
     time_t ltime = time(NULL);
@@ -17,6 +18,9 @@ int main(int argc, char *argv[]) {
     int BlockSize;               // Size of each block. Mean value within block would be calculated
     read_inp(argv[1], &N_size, &beta, &epsilon, &mu, &nWait, &nSweep, &BlockSize);
     printf("Given N_size = %d\nGiven beta = %4f\nGiven epsilon = %4f\nGiven mu = %4f\nGiven Wait time = %d\nGiven Sweep time = %d\nGiven Block size = %d\n", N_size, beta, epsilon, mu, nWait, nSweep, BlockSize);
+    int *table;
+    table = calloc(N_size * N_size * N_size * 7, sizeof(int));
+    prep_map(N_size, table);
     int *backward = NULL;
     int Ntime = (int) (beta / epsilon);
     int totsize = (int) (beta / epsilon) * N_size * N_size * N_size;
@@ -41,7 +45,7 @@ int main(int argc, char *argv[]) {
     eneArrMean = calloc(nSweep, sizeof(double));
 
     for (int j = 0; j < nWait; j++) {
-        monte(N_size, Ntime, epsilon, mu, forward, backward);
+        monte(N_size, Ntime, epsilon, mu, table, forward, backward);
     }
     for (int b = 0; b < nSweep; b++) {
         printf("Start new group. Now the group number is %d\n", b);
@@ -51,7 +55,7 @@ int main(int argc, char *argv[]) {
         for (int g = 0; g < BlockSize; g++) {
             double ene;
             int number;
-            monte(N_size, Ntime, epsilon, mu, forward, backward);
+            monte(N_size, Ntime, epsilon, mu, table, forward, backward);
             number = count_non_zero(N_size, forward);
             ene = cal_energy(totsize, beta, number, backward);
             num += number;
@@ -78,5 +82,6 @@ int main(int argc, char *argv[]) {
     free(numArrMean);
     free(eneArrMean);
     free(forward);
+    free(table);
     return 0;
 }

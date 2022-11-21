@@ -23,78 +23,83 @@ int move(double epsilon) {
     return direction;
 }
 
-void update(int direction, int N_size, int Ntime, int *pindex) {
+void update(int direction, int N_size, int Ntime, int *pindex, int *table) {
     int old_index = *pindex;
     int Nsizes = N_size * N_size;
     int Nsizec = N_size * N_size * N_size;
     int ctime = (int) (old_index / Nsizec);
-    int cx, cy, cz;
-    cx = (old_index - ctime * Nsizec) % N_size;
-    cy = (int) ((old_index - ctime * Nsizec) % Nsizes) / N_size;
-    cz = (int) (old_index - ctime * Nsizec) % (Nsizec) / Nsizes;
+    int new_position;
+    int position = (old_index - ctime * Nsizec);
+    int ndirection;
+    switch (direction) {
+        case -3:
+            new_position = table[position * 7];
+            break;
+        case -2:
+            new_position = table[position * 7 + 1];
+            break;
+        case -1:
+            new_position = table[position * 7 + 2];
+            break;
+        case 4:
+            new_position = table[position * 7 + 3];
+            break;
+        case 1:
+            new_position = table[position * 7 + 4];
+            break;
+        case 2:
+            new_position = table[position * 7 + 5];;
+            break;
+        case 3:
+            new_position = table[position * 7 + 6];
+            break;
+        default:
+            new_position = table[position * 7 + 3];
+            break;
+    }
     ctime = (ctime + 1) % Ntime;
-    switch (direction) {
-        case 1:
-            cx = (cx + 1) % N_size;
-            break;
-        case 2:
-            cy = (cy + 1) % N_size;
-            break;
-        case 3:
-            cz = (cz + 1) % N_size;
-            break;
-        case -1:
-            cx = (cx - 1 + N_size) % N_size;
-            break;
-        case -2:
-            cy = (cy - 1 + N_size) % N_size;
-            break;
-        case -3:
-            cz = (cz - 1 + N_size) % N_size;
-            break;
-        default:
-            break;
-    }
-    *pindex = ctime * 8 + cz * 4 + cy * 2 + cx;
+    *pindex = ctime * Nsizec + new_position;
 }
 
-void reverse(int direction, int N_size, int Ntime, int *pindex) {
+void reverse(int direction, int N_size, int Ntime, int *pindex, int *table) {
     int old_index = *pindex;
     int Nsizes = N_size * N_size;
     int Nsizec = N_size * N_size * N_size;
     int ctime = (int) (old_index / Nsizec);
-    int cx, cy, cz;
-    cx = (old_index - ctime * Nsizec) % N_size;
-    cy = (int) ((old_index - ctime * Nsizec) % Nsizes) / N_size;
-    cz = (int) (old_index - ctime * Nsizec) % (Nsizec) / Nsizes;
-    ctime = (ctime - 1 + Ntime) % Ntime;
+    int new_position;
+    int position = (old_index - ctime * Nsizec);
     switch (direction) {
-        case 1:
-            cx = (cx + 1) % N_size;
-            break;
-        case 2:
-            cy = (cy + 1) % N_size;
-            break;
-        case 3:
-            cz = (cz + 1) % N_size;
-            break;
-        case -1:
-            cx = (cx - 1 + N_size) % N_size;
+        case -3:
+            new_position = table[position * 7];
             break;
         case -2:
-            cy = (cy - 1 + N_size) % N_size;
+            new_position = table[position * 7 + 1];
             break;
-        case -3:
-            cz = (cz - 1 + N_size) % N_size;
+        case -1:
+            new_position = table[position * 7 + 2];
+            break;
+        case 4:
+            new_position = table[position * 7 + 3];
+            break;
+        case 1:
+            new_position = table[position * 7 + 4];
+            break;
+        case 2:
+            new_position = table[position * 7 + 5];;
+            break;
+        case 3:
+            new_position = table[position * 7 + 6];
             break;
         default:
+            new_position = table[position * 7 + 3];
             break;
     }
-    *pindex = ctime * 8 + cz * 4 + cy * 2 + cx;
+    ctime = (ctime - 1 + Ntime) % Ntime;
+    *pindex = ctime * Nsizec + new_position;
 }
 
 
-void monte(int N_size, int Ntime, double epsilon, double mu, int *forward, int *backward) {
+void monte(int N_size, int Ntime, double epsilon, double mu, int *table, int *forward, int *backward) {
     int totsize = N_size * N_size * N_size * Ntime;
     int index = random_start(totsize);
     int arrow;
@@ -106,7 +111,6 @@ void monte(int N_size, int Ntime, double epsilon, double mu, int *forward, int *
     int collision = 0;
     // int i = 0;
     int direction;
-    double e = 2.7182818284590452353602874713527;
     while (1) {
         // i++;
         if (arrow) {
@@ -114,7 +118,7 @@ void monte(int N_size, int Ntime, double epsilon, double mu, int *forward, int *
             forward[index] =
                     direction;
             update(direction, N_size, Ntime,
-                   &index);
+                   &index, table);
             if (backward[index]) {
                 collision = backward[index];
                 arrow = 0;
@@ -134,7 +138,7 @@ void monte(int N_size, int Ntime, double epsilon, double mu, int *forward, int *
                 direction = backward[index];
                 backward[index] = 0;
             }
-            reverse(direction, N_size, Ntime,&index);
+            reverse(direction, N_size, Ntime,&index, table);
             forward[index] = 0;
 
             // Reject prob
