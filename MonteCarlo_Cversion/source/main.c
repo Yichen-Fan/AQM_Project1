@@ -1,19 +1,25 @@
 #include <stdio.h>
 #include "worldline.h"
+#include "read_inp.h"
 
-int main() {
+int main(int argc, char *argv[]) {
     time_t ltime = time(NULL);
     printf("Starting for quantum Monte Carlo simulation at %s\n",asctime(localtime(&ltime)));
     srand(time(NULL)); // Generate random seed with time.
+
     // Define
-    int N_size = 2;
-    double beta = 12.0;
-    double epsilon = 0.01;
-    double mu = 1.4;
+    int N_size;
+    double beta;
+    double epsilon;
+    double mu;
+    int nWait;                   // Discard the first few iteration to wait until equilibrium state.
+    int nSweep;                 // Total number of groups in the Monte Carlo simulation
+    int BlockSize;               // Size of each block. Mean value within block would be calculated
+    read_inp(argv[1], &N_size, &beta, &epsilon, &mu, &nWait, &nSweep, &BlockSize);
+    printf("Given N_size = %d\nGiven beta = %4f\nGiven epsilon = %4f\nGiven mu = %4f\nGiven Wait time = %d\nGiven Sweep time = %d\nGiven Block size = %d\n", N_size, beta, epsilon, mu, nWait, nSweep, BlockSize);
     int *backward = NULL;
     int Ntime = (int) (beta / epsilon);
     int totsize = (int) (beta / epsilon) * N_size * N_size * N_size;
-    printf("%d", totsize);
     int arrow = 1;      // Direction of time arrow
     int index = 0;      // Index of the flatten index
     int collision = 0;  // collision at the last move
@@ -25,9 +31,6 @@ int main() {
     forward = calloc(totsize, sizeof(int));
     int direction = 0;
 
-    int nWait = 1000;                   // Discard the first few iteration to wait until equilibrium state.
-    int nSweep = 100;                 // Total number of groups in the Monte Carlo simulation
-    int BlockSize = 500;               // Size of each block. Mean value within block would be calculated
 
 
     // Define and calloc space for array
@@ -69,7 +72,7 @@ int main() {
     printf("%f\n", energy_sum / nSweep);
 
     ltime = time(NULL);
-    printf("Finish %d iterations at %s\n", nWait, asctime(localtime(&ltime)));
+    printf("Finish %d iterations at %s\n", nWait + nSweep * BlockSize, asctime(localtime(&ltime)));
 
     free(backward);
     free(numArrMean);
