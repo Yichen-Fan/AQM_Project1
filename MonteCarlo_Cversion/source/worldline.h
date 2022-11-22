@@ -38,16 +38,27 @@ int move(double epsilon);
 /*
  * update: Function used to update the index after each movement.
  * direction: input. Direction of movement;
- * pindex: input, and output. The pointer points to the current index. The index will be updated in this function;
+ *  Ntime: input, number of total time steps;
+ *  pindex: input and output. Pointer points to current location. Will be updatetd in this function;
+ *  table: input, array to store the map.
  */
 void update(int direction, int Nsize, int Ntime, int *pindex, int *table);
 /*
  *  reverse: Similar to update function, but time arrow is negative here.
  *  direction: input. direction of movement in space;
+ *  Ntime: input, number of total time steps;
  *  pindex: input and output. Pointer points to current location. Will be updatetd in this function;
+ *  table: input, array to store the map.
  */
 void reverse(int direction, int Nsize, int Ntime, int *pindex, int *table);
 /*
- *
+ * monte: Call this function to run while loop.
+ * N_size: input. Spacial size;
+ * Ntime: input, Number of time steps;
+ * epsilon: input, length of time step;
+ * mu: input, chemical potential;
+ * table: input, array to store the mapping between initial and final position;
+ * forward: input and output, configuration;
+ * backward: input and output, configuration;
  */
 void monte(int N_size, int Ntime, double epsilon, double mu, int *table, int *forward, int *backward);

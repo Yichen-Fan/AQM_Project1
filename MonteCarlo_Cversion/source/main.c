@@ -21,6 +21,12 @@ int main(int argc, char *argv[]) {
     int *table;
     table = calloc(N_size * N_size * N_size * 7, sizeof(int));
     prep_map(N_size, table);
+    for (int row = 0; row < 8; row++) {
+         for (int col = 0; col < 7; col++) {
+              printf("%d  ", table[row * 7 + col]);
+         }
+         printf("\n");
+    }
     int *backward = NULL;
     int Ntime = (int) (beta / epsilon);
     int totsize = (int) (beta / epsilon) * N_size * N_size * N_size;
