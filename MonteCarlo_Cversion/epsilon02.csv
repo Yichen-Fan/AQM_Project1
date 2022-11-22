@@ -1,0 +1,3029 @@
+Starting for quantum Monte Carlo simulation at Tue Nov 22 16:14:16 2022
+
+Finish reading
+Given N_size = 2
+Given beta = 12.000000
+Given epsilon = 0.020000
+Given mu = 1.400000
+Given Wait time = 1000
+Given Sweep time = 1000
+Given Block size = 5000
+4  2  1  0  1  2  4  
+5  3  0  1  0  3  5  
+6  0  3  2  3  0  6  
+7  1  2  3  2  1  7  
+0  6  5  4  5  6  0  
+1  7  4  5  4  7  1  
+2  4  7  6  7  4  2  
+3  5  6  7  6  5  3  
+Start new group. Now the group number is 0
+Start new group. Now the group number is 1
+Start new group. Now the group number is 2
+Start new group. Now the group number is 3
+Start new group. Now the group number is 4
+Start new group. Now the group number is 5
+Start new group. Now the group number is 6
+Start new group. Now the group number is 7
+Start new group. Now the group number is 8
+Start new group. Now the group number is 9
+Start new group. Now the group number is 10
+Start new group. Now the group number is 11
+Start new group. Now the group number is 12
+Start new group. Now the group number is 13
+Start new group. Now the group number is 14
+Start new group. Now the group number is 15
+Start new group. Now the group number is 16
+Start new group. Now the group number is 17
+Start new group. Now the group number is 18
+Start new group. Now the group number is 19
+Start new group. Now the group number is 20
+Start new group. Now the group number is 21
+Start new group. Now the group number is 22
+Start new group. Now the group number is 23
+Start new group. Now the group number is 24
+Start new group. Now the group number is 25
+Start new group. Now the group number is 26
+Start new group. Now the group number is 27
+Start new group. Now the group number is 28
+Start new group. Now the group number is 29
+Start new group. Now the group number is 30
+Start new group. Now the group number is 31
+Start new group. Now the group number is 32
+Start new group. Now the group number is 33
+Start new group. Now the group number is 34
+Start new group. Now the group number is 35
+Start new group. Now the group number is 36
+Start new group. Now the group number is 37
+Start new group. Now the group number is 38
+Start new group. Now the group number is 39
+Start new group. Now the group number is 40
+Start new group. Now the group number is 41
+Start new group. Now the group number is 42
+Start new group. Now the group number is 43
+Start new group. Now the group number is 44
+Start new group. Now the group number is 45
+Start new group. Now the group number is 46
+Start new group. Now the group number is 47
+Start new group. Now the group number is 48
+Start new group. Now the group number is 49
+Start new group. Now the group number is 50
+Start new group. Now the group number is 51
+Start new group. Now the group number is 52
+Start new group. Now the group number is 53
+Start new group. Now the group number is 54
+Start new group. Now the group number is 55
+Start new group. Now the group number is 56
+Start new group. Now the group number is 57
+Start new group. Now the group number is 58
+Start new group. Now the group number is 59
+Start new group. Now the group number is 60
+Start new group. Now the group number is 61
+Start new group. Now the group number is 62
+Start new group. Now the group number is 63
+Start new group. Now the group number is 64
+Start new group. Now the group number is 65
+Start new group. Now the group number is 66
+Start new group. Now the group number is 67
+Start new group. Now the group number is 68
+Start new group. Now the group number is 69
+Start new group. Now the group number is 70
+Start new group. Now the group number is 71
+Start new group. Now the group number is 72
+Start new group. Now the group number is 73
+Start new group. Now the group number is 74
+Start new group. Now the group number is 75
+Start new group. Now the group number is 76
+Start new group. Now the group number is 77
+Start new group. Now the group number is 78
+Start new group. Now the group number is 79
+Start new group. Now the group number is 80
+Start new group. Now the group number is 81
+Start new group. Now the group number is 82
+Start new group. Now the group number is 83
+Start new group. Now the group number is 84
+Start new group. Now the group number is 85
+Start new group. Now the group number is 86
+Start new group. Now the group number is 87
+Start new group. Now the group number is 88
+Start new group. Now the group number is 89
+Start new group. Now the group number is 90
+Start new group. Now the group number is 91
+Start new group. Now the group number is 92
+Start new group. Now the group number is 93
+Start new group. Now the group number is 94
+Start new group. Now the group number is 95
+Start new group. Now the group number is 96
+Start new group. Now the group number is 97
+Start new group. Now the group number is 98
+Start new group. Now the group number is 99
+Start new group. Now the group number is 100
+Start new group. Now the group number is 101
+Start new group. Now the group number is 102
+Start new group. Now the group number is 103
+Start new group. Now the group number is 104
+Start new group. Now the group number is 105
+Start new group. Now the group number is 106
+Start new group. Now the group number is 107
+Start new group. Now the group number is 108
+Start new group. Now the group number is 109
+Start new group. Now the group number is 110
+Start new group. Now the group number is 111
+Start new group. Now the group number is 112
+Start new group. Now the group number is 113
+Start new group. Now the group number is 114
+Start new group. Now the group number is 115
+Start new group. Now the group number is 116
+Start new group. Now the group number is 117
+Start new group. Now the group number is 118
+Start new group. Now the group number is 119
+Start new group. Now the group number is 120
+Start new group. Now the group number is 121
+Start new group. Now the group number is 122
+Start new group. Now the group number is 123
+Start new group. Now the group number is 124
+Start new group. Now the group number is 125
+Start new group. Now the group number is 126
+Start new group. Now the group number is 127
+Start new group. Now the group number is 128
+Start new group. Now the group number is 129
+Start new group. Now the group number is 130
+Start new group. Now the group number is 131
+Start new group. Now the group number is 132
+Start new group. Now the group number is 133
+Start new group. Now the group number is 134
+Start new group. Now the group number is 135
+Start new group. Now the group number is 136
+Start new group. Now the group number is 137
+Start new group. Now the group number is 138
+Start new group. Now the group number is 139
+Start new group. Now the group number is 140
+Start new group. Now the group number is 141
+Start new group. Now the group number is 142
+Start new group. Now the group number is 143
+Start new group. Now the group number is 144
+Start new group. Now the group number is 145
+Start new group. Now the group number is 146
+Start new group. Now the group number is 147
+Start new group. Now the group number is 148
+Start new group. Now the group number is 149
+Start new group. Now the group number is 150
+Start new group. Now the group number is 151
+Start new group. Now the group number is 152
+Start new group. Now the group number is 153
+Start new group. Now the group number is 154
+Start new group. Now the group number is 155
+Start new group. Now the group number is 156
+Start new group. Now the group number is 157
+Start new group. Now the group number is 158
+Start new group. Now the group number is 159
+Start new group. Now the group number is 160
+Start new group. Now the group number is 161
+Start new group. Now the group number is 162
+Start new group. Now the group number is 163
+Start new group. Now the group number is 164
+Start new group. Now the group number is 165
+Start new group. Now the group number is 166
+Start new group. Now the group number is 167
+Start new group. Now the group number is 168
+Start new group. Now the group number is 169
+Start new group. Now the group number is 170
+Start new group. Now the group number is 171
+Start new group. Now the group number is 172
+Start new group. Now the group number is 173
+Start new group. Now the group number is 174
+Start new group. Now the group number is 175
+Start new group. Now the group number is 176
+Start new group. Now the group number is 177
+Start new group. Now the group number is 178
+Start new group. Now the group number is 179
+Start new group. Now the group number is 180
+Start new group. Now the group number is 181
+Start new group. Now the group number is 182
+Start new group. Now the group number is 183
+Start new group. Now the group number is 184
+Start new group. Now the group number is 185
+Start new group. Now the group number is 186
+Start new group. Now the group number is 187
+Start new group. Now the group number is 188
+Start new group. Now the group number is 189
+Start new group. Now the group number is 190
+Start new group. Now the group number is 191
+Start new group. Now the group number is 192
+Start new group. Now the group number is 193
+Start new group. Now the group number is 194
+Start new group. Now the group number is 195
+Start new group. Now the group number is 196
+Start new group. Now the group number is 197
+Start new group. Now the group number is 198
+Start new group. Now the group number is 199
+Start new group. Now the group number is 200
+Start new group. Now the group number is 201
+Start new group. Now the group number is 202
+Start new group. Now the group number is 203
+Start new group. Now the group number is 204
+Start new group. Now the group number is 205
+Start new group. Now the group number is 206
+Start new group. Now the group number is 207
+Start new group. Now the group number is 208
+Start new group. Now the group number is 209
+Start new group. Now the group number is 210
+Start new group. Now the group number is 211
+Start new group. Now the group number is 212
+Start new group. Now the group number is 213
+Start new group. Now the group number is 214
+Start new group. Now the group number is 215
+Start new group. Now the group number is 216
+Start new group. Now the group number is 217
+Start new group. Now the group number is 218
+Start new group. Now the group number is 219
+Start new group. Now the group number is 220
+Start new group. Now the group number is 221
+Start new group. Now the group number is 222
+Start new group. Now the group number is 223
+Start new group. Now the group number is 224
+Start new group. Now the group number is 225
+Start new group. Now the group number is 226
+Start new group. Now the group number is 227
+Start new group. Now the group number is 228
+Start new group. Now the group number is 229
+Start new group. Now the group number is 230
+Start new group. Now the group number is 231
+Start new group. Now the group number is 232
+Start new group. Now the group number is 233
+Start new group. Now the group number is 234
+Start new group. Now the group number is 235
+Start new group. Now the group number is 236
+Start new group. Now the group number is 237
+Start new group. Now the group number is 238
+Start new group. Now the group number is 239
+Start new group. Now the group number is 240
+Start new group. Now the group number is 241
+Start new group. Now the group number is 242
+Start new group. Now the group number is 243
+Start new group. Now the group number is 244
+Start new group. Now the group number is 245
+Start new group. Now the group number is 246
+Start new group. Now the group number is 247
+Start new group. Now the group number is 248
+Start new group. Now the group number is 249
+Start new group. Now the group number is 250
+Start new group. Now the group number is 251
+Start new group. Now the group number is 252
+Start new group. Now the group number is 253
+Start new group. Now the group number is 254
+Start new group. Now the group number is 255
+Start new group. Now the group number is 256
+Start new group. Now the group number is 257
+Start new group. Now the group number is 258
+Start new group. Now the group number is 259
+Start new group. Now the group number is 260
+Start new group. Now the group number is 261
+Start new group. Now the group number is 262
+Start new group. Now the group number is 263
+Start new group. Now the group number is 264
+Start new group. Now the group number is 265
+Start new group. Now the group number is 266
+Start new group. Now the group number is 267
+Start new group. Now the group number is 268
+Start new group. Now the group number is 269
+Start new group. Now the group number is 270
+Start new group. Now the group number is 271
+Start new group. Now the group number is 272
+Start new group. Now the group number is 273
+Start new group. Now the group number is 274
+Start new group. Now the group number is 275
+Start new group. Now the group number is 276
+Start new group. Now the group number is 277
+Start new group. Now the group number is 278
+Start new group. Now the group number is 279
+Start new group. Now the group number is 280
+Start new group. Now the group number is 281
+Start new group. Now the group number is 282
+Start new group. Now the group number is 283
+Start new group. Now the group number is 284
+Start new group. Now the group number is 285
+Start new group. Now the group number is 286
+Start new group. Now the group number is 287
+Start new group. Now the group number is 288
+Start new group. Now the group number is 289
+Start new group. Now the group number is 290
+Start new group. Now the group number is 291
+Start new group. Now the group number is 292
+Start new group. Now the group number is 293
+Start new group. Now the group number is 294
+Start new group. Now the group number is 295
+Start new group. Now the group number is 296
+Start new group. Now the group number is 297
+Start new group. Now the group number is 298
+Start new group. Now the group number is 299
+Start new group. Now the group number is 300
+Start new group. Now the group number is 301
+Start new group. Now the group number is 302
+Start new group. Now the group number is 303
+Start new group. Now the group number is 304
+Start new group. Now the group number is 305
+Start new group. Now the group number is 306
+Start new group. Now the group number is 307
+Start new group. Now the group number is 308
+Start new group. Now the group number is 309
+Start new group. Now the group number is 310
+Start new group. Now the group number is 311
+Start new group. Now the group number is 312
+Start new group. Now the group number is 313
+Start new group. Now the group number is 314
+Start new group. Now the group number is 315
+Start new group. Now the group number is 316
+Start new group. Now the group number is 317
+Start new group. Now the group number is 318
+Start new group. Now the group number is 319
+Start new group. Now the group number is 320
+Start new group. Now the group number is 321
+Start new group. Now the group number is 322
+Start new group. Now the group number is 323
+Start new group. Now the group number is 324
+Start new group. Now the group number is 325
+Start new group. Now the group number is 326
+Start new group. Now the group number is 327
+Start new group. Now the group number is 328
+Start new group. Now the group number is 329
+Start new group. Now the group number is 330
+Start new group. Now the group number is 331
+Start new group. Now the group number is 332
+Start new group. Now the group number is 333
+Start new group. Now the group number is 334
+Start new group. Now the group number is 335
+Start new group. Now the group number is 336
+Start new group. Now the group number is 337
+Start new group. Now the group number is 338
+Start new group. Now the group number is 339
+Start new group. Now the group number is 340
+Start new group. Now the group number is 341
+Start new group. Now the group number is 342
+Start new group. Now the group number is 343
+Start new group. Now the group number is 344
+Start new group. Now the group number is 345
+Start new group. Now the group number is 346
+Start new group. Now the group number is 347
+Start new group. Now the group number is 348
+Start new group. Now the group number is 349
+Start new group. Now the group number is 350
+Start new group. Now the group number is 351
+Start new group. Now the group number is 352
+Start new group. Now the group number is 353
+Start new group. Now the group number is 354
+Start new group. Now the group number is 355
+Start new group. Now the group number is 356
+Start new group. Now the group number is 357
+Start new group. Now the group number is 358
+Start new group. Now the group number is 359
+Start new group. Now the group number is 360
+Start new group. Now the group number is 361
+Start new group. Now the group number is 362
+Start new group. Now the group number is 363
+Start new group. Now the group number is 364
+Start new group. Now the group number is 365
+Start new group. Now the group number is 366
+Start new group. Now the group number is 367
+Start new group. Now the group number is 368
+Start new group. Now the group number is 369
+Start new group. Now the group number is 370
+Start new group. Now the group number is 371
+Start new group. Now the group number is 372
+Start new group. Now the group number is 373
+Start new group. Now the group number is 374
+Start new group. Now the group number is 375
+Start new group. Now the group number is 376
+Start new group. Now the group number is 377
+Start new group. Now the group number is 378
+Start new group. Now the group number is 379
+Start new group. Now the group number is 380
+Start new group. Now the group number is 381
+Start new group. Now the group number is 382
+Start new group. Now the group number is 383
+Start new group. Now the group number is 384
+Start new group. Now the group number is 385
+Start new group. Now the group number is 386
+Start new group. Now the group number is 387
+Start new group. Now the group number is 388
+Start new group. Now the group number is 389
+Start new group. Now the group number is 390
+Start new group. Now the group number is 391
+Start new group. Now the group number is 392
+Start new group. Now the group number is 393
+Start new group. Now the group number is 394
+Start new group. Now the group number is 395
+Start new group. Now the group number is 396
+Start new group. Now the group number is 397
+Start new group. Now the group number is 398
+Start new group. Now the group number is 399
+Start new group. Now the group number is 400
+Start new group. Now the group number is 401
+Start new group. Now the group number is 402
+Start new group. Now the group number is 403
+Start new group. Now the group number is 404
+Start new group. Now the group number is 405
+Start new group. Now the group number is 406
+Start new group. Now the group number is 407
+Start new group. Now the group number is 408
+Start new group. Now the group number is 409
+Start new group. Now the group number is 410
+Start new group. Now the group number is 411
+Start new group. Now the group number is 412
+Start new group. Now the group number is 413
+Start new group. Now the group number is 414
+Start new group. Now the group number is 415
+Start new group. Now the group number is 416
+Start new group. Now the group number is 417
+Start new group. Now the group number is 418
+Start new group. Now the group number is 419
+Start new group. Now the group number is 420
+Start new group. Now the group number is 421
+Start new group. Now the group number is 422
+Start new group. Now the group number is 423
+Start new group. Now the group number is 424
+Start new group. Now the group number is 425
+Start new group. Now the group number is 426
+Start new group. Now the group number is 427
+Start new group. Now the group number is 428
+Start new group. Now the group number is 429
+Start new group. Now the group number is 430
+Start new group. Now the group number is 431
+Start new group. Now the group number is 432
+Start new group. Now the group number is 433
+Start new group. Now the group number is 434
+Start new group. Now the group number is 435
+Start new group. Now the group number is 436
+Start new group. Now the group number is 437
+Start new group. Now the group number is 438
+Start new group. Now the group number is 439
+Start new group. Now the group number is 440
+Start new group. Now the group number is 441
+Start new group. Now the group number is 442
+Start new group. Now the group number is 443
+Start new group. Now the group number is 444
+Start new group. Now the group number is 445
+Start new group. Now the group number is 446
+Start new group. Now the group number is 447
+Start new group. Now the group number is 448
+Start new group. Now the group number is 449
+Start new group. Now the group number is 450
+Start new group. Now the group number is 451
+Start new group. Now the group number is 452
+Start new group. Now the group number is 453
+Start new group. Now the group number is 454
+Start new group. Now the group number is 455
+Start new group. Now the group number is 456
+Start new group. Now the group number is 457
+Start new group. Now the group number is 458
+Start new group. Now the group number is 459
+Start new group. Now the group number is 460
+Start new group. Now the group number is 461
+Start new group. Now the group number is 462
+Start new group. Now the group number is 463
+Start new group. Now the group number is 464
+Start new group. Now the group number is 465
+Start new group. Now the group number is 466
+Start new group. Now the group number is 467
+Start new group. Now the group number is 468
+Start new group. Now the group number is 469
+Start new group. Now the group number is 470
+Start new group. Now the group number is 471
+Start new group. Now the group number is 472
+Start new group. Now the group number is 473
+Start new group. Now the group number is 474
+Start new group. Now the group number is 475
+Start new group. Now the group number is 476
+Start new group. Now the group number is 477
+Start new group. Now the group number is 478
+Start new group. Now the group number is 479
+Start new group. Now the group number is 480
+Start new group. Now the group number is 481
+Start new group. Now the group number is 482
+Start new group. Now the group number is 483
+Start new group. Now the group number is 484
+Start new group. Now the group number is 485
+Start new group. Now the group number is 486
+Start new group. Now the group number is 487
+Start new group. Now the group number is 488
+Start new group. Now the group number is 489
+Start new group. Now the group number is 490
+Start new group. Now the group number is 491
+Start new group. Now the group number is 492
+Start new group. Now the group number is 493
+Start new group. Now the group number is 494
+Start new group. Now the group number is 495
+Start new group. Now the group number is 496
+Start new group. Now the group number is 497
+Start new group. Now the group number is 498
+Start new group. Now the group number is 499
+Start new group. Now the group number is 500
+Start new group. Now the group number is 501
+Start new group. Now the group number is 502
+Start new group. Now the group number is 503
+Start new group. Now the group number is 504
+Start new group. Now the group number is 505
+Start new group. Now the group number is 506
+Start new group. Now the group number is 507
+Start new group. Now the group number is 508
+Start new group. Now the group number is 509
+Start new group. Now the group number is 510
+Start new group. Now the group number is 511
+Start new group. Now the group number is 512
+Start new group. Now the group number is 513
+Start new group. Now the group number is 514
+Start new group. Now the group number is 515
+Start new group. Now the group number is 516
+Start new group. Now the group number is 517
+Start new group. Now the group number is 518
+Start new group. Now the group number is 519
+Start new group. Now the group number is 520
+Start new group. Now the group number is 521
+Start new group. Now the group number is 522
+Start new group. Now the group number is 523
+Start new group. Now the group number is 524
+Start new group. Now the group number is 525
+Start new group. Now the group number is 526
+Start new group. Now the group number is 527
+Start new group. Now the group number is 528
+Start new group. Now the group number is 529
+Start new group. Now the group number is 530
+Start new group. Now the group number is 531
+Start new group. Now the group number is 532
+Start new group. Now the group number is 533
+Start new group. Now the group number is 534
+Start new group. Now the group number is 535
+Start new group. Now the group number is 536
+Start new group. Now the group number is 537
+Start new group. Now the group number is 538
+Start new group. Now the group number is 539
+Start new group. Now the group number is 540
+Start new group. Now the group number is 541
+Start new group. Now the group number is 542
+Start new group. Now the group number is 543
+Start new group. Now the group number is 544
+Start new group. Now the group number is 545
+Start new group. Now the group number is 546
+Start new group. Now the group number is 547
+Start new group. Now the group number is 548
+Start new group. Now the group number is 549
+Start new group. Now the group number is 550
+Start new group. Now the group number is 551
+Start new group. Now the group number is 552
+Start new group. Now the group number is 553
+Start new group. Now the group number is 554
+Start new group. Now the group number is 555
+Start new group. Now the group number is 556
+Start new group. Now the group number is 557
+Start new group. Now the group number is 558
+Start new group. Now the group number is 559
+Start new group. Now the group number is 560
+Start new group. Now the group number is 561
+Start new group. Now the group number is 562
+Start new group. Now the group number is 563
+Start new group. Now the group number is 564
+Start new group. Now the group number is 565
+Start new group. Now the group number is 566
+Start new group. Now the group number is 567
+Start new group. Now the group number is 568
+Start new group. Now the group number is 569
+Start new group. Now the group number is 570
+Start new group. Now the group number is 571
+Start new group. Now the group number is 572
+Start new group. Now the group number is 573
+Start new group. Now the group number is 574
+Start new group. Now the group number is 575
+Start new group. Now the group number is 576
+Start new group. Now the group number is 577
+Start new group. Now the group number is 578
+Start new group. Now the group number is 579
+Start new group. Now the group number is 580
+Start new group. Now the group number is 581
+Start new group. Now the group number is 582
+Start new group. Now the group number is 583
+Start new group. Now the group number is 584
+Start new group. Now the group number is 585
+Start new group. Now the group number is 586
+Start new group. Now the group number is 587
+Start new group. Now the group number is 588
+Start new group. Now the group number is 589
+Start new group. Now the group number is 590
+Start new group. Now the group number is 591
+Start new group. Now the group number is 592
+Start new group. Now the group number is 593
+Start new group. Now the group number is 594
+Start new group. Now the group number is 595
+Start new group. Now the group number is 596
+Start new group. Now the group number is 597
+Start new group. Now the group number is 598
+Start new group. Now the group number is 599
+Start new group. Now the group number is 600
+Start new group. Now the group number is 601
+Start new group. Now the group number is 602
+Start new group. Now the group number is 603
+Start new group. Now the group number is 604
+Start new group. Now the group number is 605
+Start new group. Now the group number is 606
+Start new group. Now the group number is 607
+Start new group. Now the group number is 608
+Start new group. Now the group number is 609
+Start new group. Now the group number is 610
+Start new group. Now the group number is 611
+Start new group. Now the group number is 612
+Start new group. Now the group number is 613
+Start new group. Now the group number is 614
+Start new group. Now the group number is 615
+Start new group. Now the group number is 616
+Start new group. Now the group number is 617
+Start new group. Now the group number is 618
+Start new group. Now the group number is 619
+Start new group. Now the group number is 620
+Start new group. Now the group number is 621
+Start new group. Now the group number is 622
+Start new group. Now the group number is 623
+Start new group. Now the group number is 624
+Start new group. Now the group number is 625
+Start new group. Now the group number is 626
+Start new group. Now the group number is 627
+Start new group. Now the group number is 628
+Start new group. Now the group number is 629
+Start new group. Now the group number is 630
+Start new group. Now the group number is 631
+Start new group. Now the group number is 632
+Start new group. Now the group number is 633
+Start new group. Now the group number is 634
+Start new group. Now the group number is 635
+Start new group. Now the group number is 636
+Start new group. Now the group number is 637
+Start new group. Now the group number is 638
+Start new group. Now the group number is 639
+Start new group. Now the group number is 640
+Start new group. Now the group number is 641
+Start new group. Now the group number is 642
+Start new group. Now the group number is 643
+Start new group. Now the group number is 644
+Start new group. Now the group number is 645
+Start new group. Now the group number is 646
+Start new group. Now the group number is 647
+Start new group. Now the group number is 648
+Start new group. Now the group number is 649
+Start new group. Now the group number is 650
+Start new group. Now the group number is 651
+Start new group. Now the group number is 652
+Start new group. Now the group number is 653
+Start new group. Now the group number is 654
+Start new group. Now the group number is 655
+Start new group. Now the group number is 656
+Start new group. Now the group number is 657
+Start new group. Now the group number is 658
+Start new group. Now the group number is 659
+Start new group. Now the group number is 660
+Start new group. Now the group number is 661
+Start new group. Now the group number is 662
+Start new group. Now the group number is 663
+Start new group. Now the group number is 664
+Start new group. Now the group number is 665
+Start new group. Now the group number is 666
+Start new group. Now the group number is 667
+Start new group. Now the group number is 668
+Start new group. Now the group number is 669
+Start new group. Now the group number is 670
+Start new group. Now the group number is 671
+Start new group. Now the group number is 672
+Start new group. Now the group number is 673
+Start new group. Now the group number is 674
+Start new group. Now the group number is 675
+Start new group. Now the group number is 676
+Start new group. Now the group number is 677
+Start new group. Now the group number is 678
+Start new group. Now the group number is 679
+Start new group. Now the group number is 680
+Start new group. Now the group number is 681
+Start new group. Now the group number is 682
+Start new group. Now the group number is 683
+Start new group. Now the group number is 684
+Start new group. Now the group number is 685
+Start new group. Now the group number is 686
+Start new group. Now the group number is 687
+Start new group. Now the group number is 688
+Start new group. Now the group number is 689
+Start new group. Now the group number is 690
+Start new group. Now the group number is 691
+Start new group. Now the group number is 692
+Start new group. Now the group number is 693
+Start new group. Now the group number is 694
+Start new group. Now the group number is 695
+Start new group. Now the group number is 696
+Start new group. Now the group number is 697
+Start new group. Now the group number is 698
+Start new group. Now the group number is 699
+Start new group. Now the group number is 700
+Start new group. Now the group number is 701
+Start new group. Now the group number is 702
+Start new group. Now the group number is 703
+Start new group. Now the group number is 704
+Start new group. Now the group number is 705
+Start new group. Now the group number is 706
+Start new group. Now the group number is 707
+Start new group. Now the group number is 708
+Start new group. Now the group number is 709
+Start new group. Now the group number is 710
+Start new group. Now the group number is 711
+Start new group. Now the group number is 712
+Start new group. Now the group number is 713
+Start new group. Now the group number is 714
+Start new group. Now the group number is 715
+Start new group. Now the group number is 716
+Start new group. Now the group number is 717
+Start new group. Now the group number is 718
+Start new group. Now the group number is 719
+Start new group. Now the group number is 720
+Start new group. Now the group number is 721
+Start new group. Now the group number is 722
+Start new group. Now the group number is 723
+Start new group. Now the group number is 724
+Start new group. Now the group number is 725
+Start new group. Now the group number is 726
+Start new group. Now the group number is 727
+Start new group. Now the group number is 728
+Start new group. Now the group number is 729
+Start new group. Now the group number is 730
+Start new group. Now the group number is 731
+Start new group. Now the group number is 732
+Start new group. Now the group number is 733
+Start new group. Now the group number is 734
+Start new group. Now the group number is 735
+Start new group. Now the group number is 736
+Start new group. Now the group number is 737
+Start new group. Now the group number is 738
+Start new group. Now the group number is 739
+Start new group. Now the group number is 740
+Start new group. Now the group number is 741
+Start new group. Now the group number is 742
+Start new group. Now the group number is 743
+Start new group. Now the group number is 744
+Start new group. Now the group number is 745
+Start new group. Now the group number is 746
+Start new group. Now the group number is 747
+Start new group. Now the group number is 748
+Start new group. Now the group number is 749
+Start new group. Now the group number is 750
+Start new group. Now the group number is 751
+Start new group. Now the group number is 752
+Start new group. Now the group number is 753
+Start new group. Now the group number is 754
+Start new group. Now the group number is 755
+Start new group. Now the group number is 756
+Start new group. Now the group number is 757
+Start new group. Now the group number is 758
+Start new group. Now the group number is 759
+Start new group. Now the group number is 760
+Start new group. Now the group number is 761
+Start new group. Now the group number is 762
+Start new group. Now the group number is 763
+Start new group. Now the group number is 764
+Start new group. Now the group number is 765
+Start new group. Now the group number is 766
+Start new group. Now the group number is 767
+Start new group. Now the group number is 768
+Start new group. Now the group number is 769
+Start new group. Now the group number is 770
+Start new group. Now the group number is 771
+Start new group. Now the group number is 772
+Start new group. Now the group number is 773
+Start new group. Now the group number is 774
+Start new group. Now the group number is 775
+Start new group. Now the group number is 776
+Start new group. Now the group number is 777
+Start new group. Now the group number is 778
+Start new group. Now the group number is 779
+Start new group. Now the group number is 780
+Start new group. Now the group number is 781
+Start new group. Now the group number is 782
+Start new group. Now the group number is 783
+Start new group. Now the group number is 784
+Start new group. Now the group number is 785
+Start new group. Now the group number is 786
+Start new group. Now the group number is 787
+Start new group. Now the group number is 788
+Start new group. Now the group number is 789
+Start new group. Now the group number is 790
+Start new group. Now the group number is 791
+Start new group. Now the group number is 792
+Start new group. Now the group number is 793
+Start new group. Now the group number is 794
+Start new group. Now the group number is 795
+Start new group. Now the group number is 796
+Start new group. Now the group number is 797
+Start new group. Now the group number is 798
+Start new group. Now the group number is 799
+Start new group. Now the group number is 800
+Start new group. Now the group number is 801
+Start new group. Now the group number is 802
+Start new group. Now the group number is 803
+Start new group. Now the group number is 804
+Start new group. Now the group number is 805
+Start new group. Now the group number is 806
+Start new group. Now the group number is 807
+Start new group. Now the group number is 808
+Start new group. Now the group number is 809
+Start new group. Now the group number is 810
+Start new group. Now the group number is 811
+Start new group. Now the group number is 812
+Start new group. Now the group number is 813
+Start new group. Now the group number is 814
+Start new group. Now the group number is 815
+Start new group. Now the group number is 816
+Start new group. Now the group number is 817
+Start new group. Now the group number is 818
+Start new group. Now the group number is 819
+Start new group. Now the group number is 820
+Start new group. Now the group number is 821
+Start new group. Now the group number is 822
+Start new group. Now the group number is 823
+Start new group. Now the group number is 824
+Start new group. Now the group number is 825
+Start new group. Now the group number is 826
+Start new group. Now the group number is 827
+Start new group. Now the group number is 828
+Start new group. Now the group number is 829
+Start new group. Now the group number is 830
+Start new group. Now the group number is 831
+Start new group. Now the group number is 832
+Start new group. Now the group number is 833
+Start new group. Now the group number is 834
+Start new group. Now the group number is 835
+Start new group. Now the group number is 836
+Start new group. Now the group number is 837
+Start new group. Now the group number is 838
+Start new group. Now the group number is 839
+Start new group. Now the group number is 840
+Start new group. Now the group number is 841
+Start new group. Now the group number is 842
+Start new group. Now the group number is 843
+Start new group. Now the group number is 844
+Start new group. Now the group number is 845
+Start new group. Now the group number is 846
+Start new group. Now the group number is 847
+Start new group. Now the group number is 848
+Start new group. Now the group number is 849
+Start new group. Now the group number is 850
+Start new group. Now the group number is 851
+Start new group. Now the group number is 852
+Start new group. Now the group number is 853
+Start new group. Now the group number is 854
+Start new group. Now the group number is 855
+Start new group. Now the group number is 856
+Start new group. Now the group number is 857
+Start new group. Now the group number is 858
+Start new group. Now the group number is 859
+Start new group. Now the group number is 860
+Start new group. Now the group number is 861
+Start new group. Now the group number is 862
+Start new group. Now the group number is 863
+Start new group. Now the group number is 864
+Start new group. Now the group number is 865
+Start new group. Now the group number is 866
+Start new group. Now the group number is 867
+Start new group. Now the group number is 868
+Start new group. Now the group number is 869
+Start new group. Now the group number is 870
+Start new group. Now the group number is 871
+Start new group. Now the group number is 872
+Start new group. Now the group number is 873
+Start new group. Now the group number is 874
+Start new group. Now the group number is 875
+Start new group. Now the group number is 876
+Start new group. Now the group number is 877
+Start new group. Now the group number is 878
+Start new group. Now the group number is 879
+Start new group. Now the group number is 880
+Start new group. Now the group number is 881
+Start new group. Now the group number is 882
+Start new group. Now the group number is 883
+Start new group. Now the group number is 884
+Start new group. Now the group number is 885
+Start new group. Now the group number is 886
+Start new group. Now the group number is 887
+Start new group. Now the group number is 888
+Start new group. Now the group number is 889
+Start new group. Now the group number is 890
+Start new group. Now the group number is 891
+Start new group. Now the group number is 892
+Start new group. Now the group number is 893
+Start new group. Now the group number is 894
+Start new group. Now the group number is 895
+Start new group. Now the group number is 896
+Start new group. Now the group number is 897
+Start new group. Now the group number is 898
+Start new group. Now the group number is 899
+Start new group. Now the group number is 900
+Start new group. Now the group number is 901
+Start new group. Now the group number is 902
+Start new group. Now the group number is 903
+Start new group. Now the group number is 904
+Start new group. Now the group number is 905
+Start new group. Now the group number is 906
+Start new group. Now the group number is 907
+Start new group. Now the group number is 908
+Start new group. Now the group number is 909
+Start new group. Now the group number is 910
+Start new group. Now the group number is 911
+Start new group. Now the group number is 912
+Start new group. Now the group number is 913
+Start new group. Now the group number is 914
+Start new group. Now the group number is 915
+Start new group. Now the group number is 916
+Start new group. Now the group number is 917
+Start new group. Now the group number is 918
+Start new group. Now the group number is 919
+Start new group. Now the group number is 920
+Start new group. Now the group number is 921
+Start new group. Now the group number is 922
+Start new group. Now the group number is 923
+Start new group. Now the group number is 924
+Start new group. Now the group number is 925
+Start new group. Now the group number is 926
+Start new group. Now the group number is 927
+Start new group. Now the group number is 928
+Start new group. Now the group number is 929
+Start new group. Now the group number is 930
+Start new group. Now the group number is 931
+Start new group. Now the group number is 932
+Start new group. Now the group number is 933
+Start new group. Now the group number is 934
+Start new group. Now the group number is 935
+Start new group. Now the group number is 936
+Start new group. Now the group number is 937
+Start new group. Now the group number is 938
+Start new group. Now the group number is 939
+Start new group. Now the group number is 940
+Start new group. Now the group number is 941
+Start new group. Now the group number is 942
+Start new group. Now the group number is 943
+Start new group. Now the group number is 944
+Start new group. Now the group number is 945
+Start new group. Now the group number is 946
+Start new group. Now the group number is 947
+Start new group. Now the group number is 948
+Start new group. Now the group number is 949
+Start new group. Now the group number is 950
+Start new group. Now the group number is 951
+Start new group. Now the group number is 952
+Start new group. Now the group number is 953
+Start new group. Now the group number is 954
+Start new group. Now the group number is 955
+Start new group. Now the group number is 956
+Start new group. Now the group number is 957
+Start new group. Now the group number is 958
+Start new group. Now the group number is 959
+Start new group. Now the group number is 960
+Start new group. Now the group number is 961
+Start new group. Now the group number is 962
+Start new group. Now the group number is 963
+Start new group. Now the group number is 964
+Start new group. Now the group number is 965
+Start new group. Now the group number is 966
+Start new group. Now the group number is 967
+Start new group. Now the group number is 968
+Start new group. Now the group number is 969
+Start new group. Now the group number is 970
+Start new group. Now the group number is 971
+Start new group. Now the group number is 972
+Start new group. Now the group number is 973
+Start new group. Now the group number is 974
+Start new group. Now the group number is 975
+Start new group. Now the group number is 976
+Start new group. Now the group number is 977
+Start new group. Now the group number is 978
+Start new group. Now the group number is 979
+Start new group. Now the group number is 980
+Start new group. Now the group number is 981
+Start new group. Now the group number is 982
+Start new group. Now the group number is 983
+Start new group. Now the group number is 984
+Start new group. Now the group number is 985
+Start new group. Now the group number is 986
+Start new group. Now the group number is 987
+Start new group. Now the group number is 988
+Start new group. Now the group number is 989
+Start new group. Now the group number is 990
+Start new group. Now the group number is 991
+Start new group. Now the group number is 992
+Start new group. Now the group number is 993
+Start new group. Now the group number is 994
+Start new group. Now the group number is 995
+Start new group. Now the group number is 996
+Start new group. Now the group number is 997
+Start new group. Now the group number is 998
+Start new group. Now the group number is 999
+Current epsilon value: 0.020000
+Current lattice size: 2
+Current chemical potential: 1.400000
+Particle number:
+1.646800
+1.640400
+1.626800
+1.647800
+1.586600
+1.631800
+1.638400
+1.612200
+1.649400
+1.606400
+1.645600
+1.648800
+1.642600
+1.652400
+1.600200
+1.622800
+1.645000
+1.631600
+1.548800
+1.655000
+1.626800
+1.624800
+1.666400
+1.636600
+1.636800
+1.605600
+1.629800
+1.656800
+1.613400
+1.648200
+1.632000
+1.625600
+1.629400
+1.624400
+1.618800
+1.612600
+1.643800
+1.576200
+1.615800
+1.587400
+1.651800
+1.631800
+1.662800
+1.630600
+1.674400
+1.654800
+1.608200
+1.607400
+1.600200
+1.630400
+1.682600
+1.626600
+1.626200
+1.628800
+1.623000
+1.645000
+1.599200
+1.617400
+1.615400
+1.636000
+1.627600
+1.592800
+1.614400
+1.655800
+1.614600
+1.633400
+1.608000
+1.659000
+1.600600
+1.641400
+1.636200
+1.660200
+1.616200
+1.652600
+1.673200
+1.636200
+1.620800
+1.654600
+1.646400
+1.566800
+1.656400
+1.634800
+1.643200
+1.617200
+1.682200
+1.602600
+1.591400
+1.634200
+1.635600
+1.607400
+1.599600
+1.632000
+1.602600
+1.648200
+1.610000
+1.632800
+1.624000
+1.658600
+1.602400
+1.625400
+1.651200
+1.611400
+1.635600
+1.644400
+1.624400
+1.637600
+1.673000
+1.649400
+1.588800
+1.613600
+1.641400
+1.639600
+1.621200
+1.591800
+1.593800
+1.657000
+1.610200
+1.641400
+1.639400
+1.629000
+1.640000
+1.660200
+1.621200
+1.628200
+1.612600
+1.621800
+1.613200
+1.652600
+1.613800
+1.649600
+1.629400
+1.621400
+1.577000
+1.610800
+1.642000
+1.639600
+1.624800
+1.612800
+1.601000
+1.638800
+1.641800
+1.620800
+1.634800
+1.630600
+1.655600
+1.662200
+1.666000
+1.580400
+1.602600
+1.649400
+1.652800
+1.616600
+1.640000
+1.644600
+1.624400
+1.620200
+1.635400
+1.615800
+1.640800
+1.667800
+1.635800
+1.626600
+1.652800
+1.640800
+1.651000
+1.638400
+1.632600
+1.626000
+1.611800
+1.621400
+1.617600
+1.636800
+1.657600
+1.615800
+1.629400
+1.643000
+1.616000
+1.642800
+1.602800
+1.645600
+1.609400
+1.618400
+1.615800
+1.681800
+1.657000
+1.595000
+1.595800
+1.608000
+1.611600
+1.620800
+1.609800
+1.556000
+1.644200
+1.618400
+1.646600
+1.626200
+1.619200
+1.660400
+1.632800
+1.613000
+1.627200
+1.637000
+1.641000
+1.635600
+1.583200
+1.626600
+1.602600
+1.629800
+1.601800
+1.626400
+1.654400
+1.629800
+1.633600
+1.618000
+1.651200
+1.637000
+1.611200
+1.590800
+1.629200
+1.632200
+1.608200
+1.611200
+1.654000
+1.638000
+1.652400
+1.633600
+1.646600
+1.656000
+1.678800
+1.649600
+1.638600
+1.630600
+1.641000
+1.574800
+1.626800
+1.622600
+1.654800
+1.677000
+1.620000
+1.634800
+1.635400
+1.656000
+1.652000
+1.646600
+1.633200
+1.588600
+1.602400
+1.631600
+1.611600
+1.604200
+1.625600
+1.645000
+1.646600
+1.620600
+1.635000
+1.614800
+1.590600
+1.614400
+1.622400
+1.678800
+1.628200
+1.642800
+1.626400
+1.653200
+1.651200
+1.605800
+1.604200
+1.566400
+1.614400
+1.657200
+1.615600
+1.645200
+1.640800
+1.635200
+1.638000
+1.612800
+1.642400
+1.607600
+1.617000
+1.660800
+1.638600
+1.595600
+1.592600
+1.626400
+1.592400
+1.644800
+1.613600
+1.638400
+1.651400
+1.601000
+1.663400
+1.696400
+1.603200
+1.638800
+1.642200
+1.599200
+1.670000
+1.641600
+1.600800
+1.631200
+1.644400
+1.621000
+1.624400
+1.642000
+1.650800
+1.637600
+1.596400
+1.631800
+1.643200
+1.644200
+1.633200
+1.610800
+1.670200
+1.610000
+1.590800
+1.602200
+1.665600
+1.608800
+1.628200
+1.638800
+1.617200
+1.621000
+1.639000
+1.609600
+1.580600
+1.649800
+1.611800
+1.597000
+1.619200
+1.669400
+1.646400
+1.667800
+1.657000
+1.605800
+1.677200
+1.606200
+1.611800
+1.619600
+1.596000
+1.650400
+1.601200
+1.644800
+1.651800
+1.631600
+1.621400
+1.629400
+1.641200
+1.650200
+1.620000
+1.613200
+1.635000
+1.639000
+1.647000
+1.606800
+1.622400
+1.648400
+1.627000
+1.620800
+1.650800
+1.585400
+1.613400
+1.655000
+1.660400
+1.601200
+1.631000
+1.596600
+1.657600
+1.622000
+1.635600
+1.616600
+1.665400
+1.666400
+1.611600
+1.652600
+1.647600
+1.634400
+1.629000
+1.612200
+1.632000
+1.628800
+1.656800
+1.602000
+1.606200
+1.618000
+1.640200
+1.660000
+1.628400
+1.632400
+1.619000
+1.642400
+1.591400
+1.598200
+1.597600
+1.641000
+1.667600
+1.625600
+1.640200
+1.645600
+1.670000
+1.642200
+1.644600
+1.641400
+1.604600
+1.632200
+1.637800
+1.625200
+1.628400
+1.610000
+1.656800
+1.644600
+1.619400
+1.643000
+1.624600
+1.625600
+1.584800
+1.633400
+1.650400
+1.625000
+1.658000
+1.646200
+1.603000
+1.608400
+1.596200
+1.621200
+1.650200
+1.629600
+1.603200
+1.622200
+1.651600
+1.640600
+1.624000
+1.600600
+1.644600
+1.618400
+1.601000
+1.603600
+1.624200
+1.602600
+1.610800
+1.623600
+1.676600
+1.639000
+1.604200
+1.622200
+1.618200
+1.604200
+1.608200
+1.589200
+1.618200
+1.662400
+1.648600
+1.661200
+1.659000
+1.603800
+1.629800
+1.605200
+1.661400
+1.622000
+1.607800
+1.603400
+1.609400
+1.609800
+1.619800
+1.603800
+1.635400
+1.618800
+1.614400
+1.635800
+1.616200
+1.651200
+1.623400
+1.627400
+1.660400
+1.621000
+1.649400
+1.596600
+1.619200
+1.649600
+1.599000
+1.615000
+1.600000
+1.614600
+1.602400
+1.596000
+1.639000
+1.619400
+1.628200
+1.599600
+1.666800
+1.633800
+1.649000
+1.634600
+1.622000
+1.636800
+1.637200
+1.695000
+1.624800
+1.582000
+1.621000
+1.629200
+1.613800
+1.654800
+1.598400
+1.627800
+1.638400
+1.624000
+1.624400
+1.645200
+1.649800
+1.634400
+1.609800
+1.654000
+1.635800
+1.634000
+1.625000
+1.641200
+1.659000
+1.623000
+1.658200
+1.620800
+1.680000
+1.629800
+1.658200
+1.647000
+1.661600
+1.660800
+1.639600
+1.630000
+1.645800
+1.616200
+1.629600
+1.631600
+1.657800
+1.661200
+1.576400
+1.608600
+1.609400
+1.641600
+1.634800
+1.674600
+1.649200
+1.629200
+1.652800
+1.650800
+1.633600
+1.657000
+1.651600
+1.615800
+1.670200
+1.613800
+1.594200
+1.649600
+1.636400
+1.617000
+1.617800
+1.624400
+1.676200
+1.648600
+1.604000
+1.610200
+1.595200
+1.637000
+1.645600
+1.613000
+1.644400
+1.610600
+1.599200
+1.623800
+1.615200
+1.626600
+1.615200
+1.619200
+1.639400
+1.651200
+1.598600
+1.639000
+1.662400
+1.614600
+1.647000
+1.663200
+1.629800
+1.584200
+1.623000
+1.625400
+1.666800
+1.602800
+1.667000
+1.618400
+1.646800
+1.693400
+1.652200
+1.641600
+1.618000
+1.626000
+1.605000
+1.624400
+1.600600
+1.579800
+1.599000
+1.652800
+1.602800
+1.646400
+1.697800
+1.590600
+1.627000
+1.612000
+1.614400
+1.637000
+1.598600
+1.598600
+1.616600
+1.635000
+1.644400
+1.656000
+1.622400
+1.628000
+1.574600
+1.641000
+1.614200
+1.593800
+1.582600
+1.652800
+1.632000
+1.627800
+1.611800
+1.676600
+1.631000
+1.603800
+1.608000
+1.603600
+1.604200
+1.623200
+1.597600
+1.643800
+1.646200
+1.606200
+1.618000
+1.607600
+1.596000
+1.619800
+1.595800
+1.619400
+1.644600
+1.595800
+1.639400
+1.620600
+1.649200
+1.634400
+1.603600
+1.543600
+1.634200
+1.627200
+1.680000
+1.638600
+1.639600
+1.610000
+1.650600
+1.649400
+1.632200
+1.671400
+1.633400
+1.583600
+1.647400
+1.609800
+1.657400
+1.661400
+1.623600
+1.648000
+1.644200
+1.642400
+1.675600
+1.649600
+1.638200
+1.627200
+1.647000
+1.624400
+1.622200
+1.602400
+1.624800
+1.616200
+1.648400
+1.632000
+1.657800
+1.668200
+1.655200
+1.636800
+1.644800
+1.587800
+1.604600
+1.580200
+1.713400
+1.619600
+1.678800
+1.622200
+1.641200
+1.631200
+1.636000
+1.597800
+1.577800
+1.612600
+1.622400
+1.618800
+1.629200
+1.631000
+1.633600
+1.626800
+1.644200
+1.603800
+1.678000
+1.644600
+1.573000
+1.618800
+1.628000
+1.603800
+1.582800
+1.639600
+1.658000
+1.635400
+1.648800
+1.614400
+1.641600
+1.595400
+1.644800
+1.589400
+1.598400
+1.596800
+1.614000
+1.618000
+1.638400
+1.618400
+1.633200
+1.662800
+1.639600
+1.624200
+1.625800
+1.649400
+1.624400
+1.628800
+1.649000
+1.611000
+1.667400
+1.596400
+1.632600
+1.647800
+1.649800
+1.642600
+1.616400
+1.642400
+1.679800
+1.637200
+1.617200
+1.623400
+1.630800
+1.644200
+1.652000
+1.629800
+1.611400
+1.604400
+1.643200
+1.639400
+1.641800
+1.619400
+1.582400
+1.637600
+1.607400
+1.624600
+1.588200
+1.661200
+1.681400
+1.595800
+1.650600
+1.649200
+1.621800
+1.629600
+1.629600
+1.631800
+1.619200
+1.625800
+1.620600
+1.586000
+1.619400
+1.641600
+1.650200
+1.664400
+1.606400
+1.675000
+1.654800
+1.638200
+1.618000
+1.619200
+1.665400
+1.625800
+1.661400
+1.633200
+1.629400
+1.613800
+1.627600
+1.623200
+1.687000
+1.632600
+1.628000
+1.573600
+1.646400
+1.631000
+1.600800
+1.603400
+1.652200
+1.619400
+1.632200
+1.628200
+1.634800
+1.635600
+1.628000
+1.653600
+1.678000
+1.604800
+1.622000
+1.651400
+1.613800
+1.648800
+1.641400
+1.639200
+1.615600
+1.631400
+1.647200
+1.669800
+1.672800
+1.622400
+1.580200
+1.634600
+1.621800
+1.632800
+1.635000
+1.656000
+1.672200
+1.617400
+1.646400
+1.630400
+1.645800
+1.621800
+1.620400
+1.611600
+1.626600
+1.629400
+1.628600
+1.640400
+1.592400
+1.627400
+1.640200
+1.633800
+1.611000
+1.677600
+1.602800
+1.615200
+1.640600
+1.625600
+1.620800
+1.606400
+1.607200
+1.640400
+1.644600
+1.604000
+1.642400
+1.626400
+1.670200
+1.617200
+1.661200
+1.651600
+1.624000
+1.669000
+1.633000
+1.640000
+1.594000
+1.612600
+1.616400
+1.622600
+1.603200
+1.640200
+1.591400
+1.626600
+1.641600
+1.647800
+1.614200
+1.630200
+1.651600
+1.635400
+1.624000
+1.640200
+1.661000
+1.573000
+1.679600
+1.595600
+1.616200
+1.638200
+1.638800
+1.631200
+1.590600
+1.604600
+1.625400
+1.640600
+1.612000
+1.652400
+1.613400
+1.680800
+1.627400
+1.605200
+1.629200
+1.636400
+1.606000
+1.650400
+1.638400
+1.611000
+1.651800
+1.636400
+1.635200
+1.607200
+1.693000
+1.630600
+1.641400
+1.666800
+1.639000
+1.626000
+1.619800
+1.656600
+1.636600
+1.613800
+1.604800
+1.613600
+1.638400
+1.621800
+1.587600
+1.643200
+1.666600
+1.621400
+1.632200
+1.619200
+1.630000
+1.624200
+1.616800
+1.630200
+1.603600
+1.603200
+1.592000
+1.602200
+1.616000
+1.644200
+1.611200
+1.680200
+1.619600
+1.614200
+1.625400
+1.644400
+1.574000
+1.593800
+1.585000
+1.653000
+1.630600
+1.642800
+1.633600
+1.634200
+1.660600
+1.658000
+1.664400
+1.650400
+1.624600
+1.597600
+1.597800
+1.605200
+1.636600
+1.643600
+1.643000
+1.600200
+1.613200
+1.645200
+1.623600
+1.645400
+1.614400
+1.601800
+1.651400
+1.638000
+1.645200
+1.635600
+1.594000
+1.608200
+1.640800
+1.644000
+1.618000
+1.617400
+1.661200
+1.626600
+1.610200
+1.634600
+1.623400
+1.587400
+1.593000
+1.627200
+1.612600
+1.638600
+1.624400
+1.605400
+End of array.
+Energy:
+0.851515
+0.781894
+0.791705
+0.857652
+0.790038
+0.831098
+0.765492
+0.849886
+0.836515
+0.701212
+0.832159
+0.883447
+0.802424
+0.853636
+0.772348
+0.741402
+0.777424
+0.835758
+0.705417
+0.891098
+0.787121
+0.721136
+0.808561
+0.833636
+0.820379
+0.871364
+0.851326
+0.941326
+0.814735
+0.859129
+0.798750
+0.767727
+0.782955
+0.771402
+0.817727
+0.806250
+0.816970
+0.698106
+0.791591
+0.744508
+0.831705
+0.879621
+0.912197
+0.826705
+0.851667
+0.827765
+0.826136
+0.745303
+0.743295
+0.816439
+0.854697
+0.859773
+0.815038
+0.816818
+0.746288
+0.844886
+0.735152
+0.788788
+0.743485
+0.782727
+0.786439
+0.777311
+0.824280
+0.892045
+0.817386
+0.828939
+0.783258
+0.775795
+0.735076
+0.854924
+0.801553
+0.801515
+0.806288
+0.844735
+0.861515
+0.807614
+0.824886
+0.842008
+0.820114
+0.730568
+0.838826
+0.793144
+0.846591
+0.743636
+0.901326
+0.766667
+0.784432
+0.842841
+0.876439
+0.687083
+0.830227
+0.791326
+0.726970
+0.854394
+0.786061
+0.821553
+0.722879
+0.779773
+0.746023
+0.842500
+0.865455
+0.781705
+0.880644
+0.795720
+0.822083
+0.812273
+0.815417
+0.812311
+0.770417
+0.802955
+0.803788
+0.831477
+0.859924
+0.759773
+0.746023
+0.893750
+0.801818
+0.850720
+0.828182
+0.799318
+0.844432
+0.886818
+0.837462
+0.847500
+0.772803
+0.837992
+0.854129
+0.851439
+0.851098
+0.776970
+0.833371
+0.824735
+0.793447
+0.813826
+0.785455
+0.860265
+0.804962
+0.743409
+0.780568
+0.792841
+0.816364
+0.852500
+0.821705
+0.887538
+0.816023
+0.877538
+0.857727
+0.849470
+0.808902
+0.883939
+0.855947
+0.794773
+0.834015
+0.837348
+0.752273
+0.777614
+0.863182
+0.856894
+0.757462
+0.867273
+0.809848
+0.823674
+0.849545
+0.859356
+0.830871
+0.759470
+0.867386
+0.851061
+0.808939
+0.791174
+0.849280
+0.841439
+0.849053
+0.734318
+0.811288
+0.823295
+0.736364
+0.829811
+0.794167
+0.883561
+0.756818
+0.804394
+0.875227
+0.882008
+0.907500
+0.731932
+0.737045
+0.834394
+0.822045
+0.829015
+0.793030
+0.680000
+0.895189
+0.777348
+0.861212
+0.867424
+0.775871
+0.860492
+0.801818
+0.714773
+0.824735
+0.895455
+0.753826
+0.832727
+0.735682
+0.871705
+0.754015
+0.812576
+0.736402
+0.801932
+0.834015
+0.785379
+0.811591
+0.794280
+0.775758
+0.849962
+0.760303
+0.821970
+0.821553
+0.868712
+0.831136
+0.743409
+0.797273
+0.826970
+0.848220
+0.843788
+0.784773
+0.863902
+0.956591
+0.782008
+0.888447
+0.840758
+0.868977
+0.749924
+0.784697
+0.835152
+0.808220
+0.893788
+0.738561
+0.869053
+0.856250
+0.942008
+0.848674
+0.848750
+0.861023
+0.735682
+0.815227
+0.783636
+0.725947
+0.763902
+0.798674
+0.826250
+0.821970
+0.782955
+0.830076
+0.756326
+0.720379
+0.775530
+0.820682
+0.841780
+0.727879
+0.789508
+0.786970
+0.877121
+0.849621
+0.816136
+0.794356
+0.688485
+0.747159
+0.895795
+0.747652
+0.834280
+0.815833
+0.841023
+0.822576
+0.790947
+0.847652
+0.801856
+0.774659
+0.884621
+0.864015
+0.741894
+0.785038
+0.847311
+0.735947
+0.824773
+0.732538
+0.852803
+0.823068
+0.782803
+0.822045
+0.863068
+0.813485
+0.770492
+0.777652
+0.777273
+0.955530
+0.804015
+0.784356
+0.878182
+0.816894
+0.798939
+0.788409
+0.820644
+0.778220
+0.830606
+0.749886
+0.848939
+0.880720
+0.822576
+0.825909
+0.777348
+0.826515
+0.809735
+0.764811
+0.796742
+0.892348
+0.771856
+0.803826
+0.785758
+0.756061
+0.801856
+0.824129
+0.742008
+0.749659
+0.825758
+0.780189
+0.748902
+0.811818
+0.795833
+0.767727
+0.820265
+0.867955
+0.790076
+0.867765
+0.848333
+0.816439
+0.876515
+0.730871
+0.800568
+0.719432
+0.831288
+0.826477
+0.809318
+0.780000
+0.796364
+0.804242
+0.865303
+0.782955
+0.767955
+0.741288
+0.842348
+0.815076
+0.788182
+0.749432
+0.793447
+0.840265
+0.749924
+0.838258
+0.737462
+0.761742
+0.851288
+0.817689
+0.719924
+0.841667
+0.775303
+0.893182
+0.760530
+0.841591
+0.830758
+0.934848
+0.889091
+0.753939
+0.898220
+0.841174
+0.818333
+0.792083
+0.820114
+0.834508
+0.851705
+0.795909
+0.741894
+0.822273
+0.821970
+0.891136
+0.861364
+0.791742
+0.868712
+0.865568
+0.812273
+0.773864
+0.752689
+0.800455
+0.730833
+0.856439
+0.790455
+0.763712
+0.787386
+0.900076
+0.853864
+0.848826
+0.814280
+0.735530
+0.837083
+0.813106
+0.744886
+0.829394
+0.836136
+0.964356
+0.750871
+0.744432
+0.873750
+0.843030
+0.799621
+0.745152
+0.819394
+0.951288
+0.756932
+0.831402
+0.811932
+0.736856
+0.787008
+0.776667
+0.785758
+0.799394
+0.783636
+0.775341
+0.802765
+0.784280
+0.771818
+0.832879
+0.809962
+0.778371
+0.787045
+0.864470
+0.794432
+0.874091
+0.767462
+0.698333
+0.785909
+0.863220
+0.785189
+0.782992
+0.796780
+0.825871
+0.758523
+0.750985
+0.794242
+0.757348
+0.872462
+0.813712
+0.864659
+0.827992
+0.729773
+0.772538
+0.762083
+0.867841
+0.797689
+0.840379
+0.744735
+0.792008
+0.750947
+0.808295
+0.720303
+0.865947
+0.788788
+0.871439
+0.831061
+0.736515
+0.894886
+0.806439
+0.839735
+0.858295
+0.743447
+0.809318
+0.768902
+0.792462
+0.911856
+0.761515
+0.723295
+0.785985
+0.794773
+0.728636
+0.698977
+0.786629
+0.865947
+0.794015
+0.737008
+0.827992
+0.821402
+0.900833
+0.815189
+0.837500
+0.815341
+0.820909
+0.899242
+0.823295
+0.801439
+0.733712
+0.845189
+0.874167
+0.812614
+0.729773
+0.760114
+0.815682
+0.869924
+0.850038
+0.841932
+0.789583
+0.802121
+0.779091
+0.850114
+0.817424
+0.809583
+0.756856
+0.820455
+0.879470
+0.821402
+0.858636
+0.832500
+0.862917
+0.846856
+0.827083
+0.854583
+0.875947
+0.871250
+0.815758
+0.771136
+0.821439
+0.836212
+0.849735
+0.770492
+0.879886
+0.929129
+0.747311
+0.719318
+0.783295
+0.786174
+0.788333
+0.864205
+0.872992
+0.744167
+0.878750
+0.833788
+0.892083
+0.875947
+0.802765
+0.806136
+0.824129
+0.791023
+0.789470
+0.870076
+0.835492
+0.747083
+0.830152
+0.836174
+0.859924
+0.885303
+0.741402
+0.763295
+0.744167
+0.772083
+0.825833
+0.760000
+0.804621
+0.776742
+0.751629
+0.793523
+0.819167
+0.851212
+0.785606
+0.865795
+0.750909
+0.847348
+0.787992
+0.838939
+0.890947
+0.767386
+0.894583
+0.843939
+0.735038
+0.748220
+0.766364
+0.755379
+0.897348
+0.775379
+0.844015
+0.862955
+0.817273
+0.958750
+0.837197
+0.779318
+0.800227
+0.809697
+0.823523
+0.737008
+0.733750
+0.736136
+0.759583
+0.821098
+0.797538
+0.840871
+0.905909
+0.786439
+0.792727
+0.860152
+0.869962
+0.873447
+0.748447
+0.783485
+0.773030
+0.867765
+0.718977
+0.826667
+0.787159
+0.787765
+0.822765
+0.838598
+0.762045
+0.762879
+0.789508
+0.866629
+0.813485
+0.798788
+0.774811
+0.898333
+0.849394
+0.756553
+0.760000
+0.795871
+0.775985
+0.819470
+0.755530
+0.793977
+0.822121
+0.763409
+0.803182
+0.739091
+0.789129
+0.830227
+0.755152
+0.810568
+0.847500
+0.750417
+0.896250
+0.819811
+0.889848
+0.847917
+0.772689
+0.689924
+0.847917
+0.811212
+0.872879
+0.793409
+0.752159
+0.792273
+0.878182
+0.859621
+0.844356
+0.880265
+0.801439
+0.811098
+0.808788
+0.781932
+0.869167
+0.824091
+0.820341
+0.854205
+0.863371
+0.837727
+0.911364
+0.832159
+0.793258
+0.777576
+0.827424
+0.763295
+0.803220
+0.812841
+0.749356
+0.819053
+0.885682
+0.855303
+0.876553
+0.840227
+0.839015
+0.818333
+0.889280
+0.730265
+0.763561
+0.777462
+1.003636
+0.885114
+0.825871
+0.832917
+0.808106
+0.815795
+0.839735
+0.762500
+0.730000
+0.755606
+0.858523
+0.831742
+0.857045
+0.807197
+0.803030
+0.767008
+0.893106
+0.820568
+0.854015
+0.850758
+0.753106
+0.850076
+0.772765
+0.772159
+0.730833
+0.820720
+0.836856
+0.846667
+0.827955
+0.829015
+0.781212
+0.723144
+0.852273
+0.791667
+0.697689
+0.771818
+0.787727
+0.840720
+0.731250
+0.837159
+0.778485
+0.860871
+0.830758
+0.790114
+0.808674
+0.873106
+0.820606
+0.853144
+0.840114
+0.727841
+0.887159
+0.782121
+0.819773
+0.844129
+0.893561
+0.873864
+0.861894
+0.828750
+0.895341
+0.872727
+0.700379
+0.800833
+0.887273
+0.861591
+0.822765
+0.863144
+0.750227
+0.753902
+0.892652
+0.875114
+0.793258
+0.883712
+0.732841
+0.864659
+0.835189
+0.808977
+0.722083
+0.928068
+0.851098
+0.780114
+0.826212
+0.812652
+0.753826
+0.807235
+0.837008
+0.845076
+0.724924
+0.825341
+0.819318
+0.703750
+0.842614
+0.834886
+0.908333
+0.842917
+0.779015
+0.838826
+0.893068
+0.813030
+0.793561
+0.755720
+0.909621
+0.825606
+0.830076
+0.836439
+0.865985
+0.827348
+0.813258
+0.778258
+0.856742
+0.768636
+0.819583
+0.751326
+0.808523
+0.751439
+0.775492
+0.829053
+0.847689
+0.817614
+0.836023
+0.843030
+0.838030
+0.811326
+0.808485
+0.830265
+0.905152
+0.813144
+0.866288
+0.863977
+0.789091
+0.762500
+0.866023
+0.812614
+0.831780
+0.811856
+0.883636
+0.879356
+0.820417
+0.820303
+0.741667
+0.769129
+0.758220
+0.831591
+0.807917
+0.864848
+0.901288
+0.787689
+0.820530
+0.864508
+0.858258
+0.754470
+0.678409
+0.785038
+0.881856
+0.820038
+0.797992
+0.857462
+0.782045
+0.765644
+0.807576
+0.732992
+0.854129
+0.862917
+0.772500
+0.848864
+0.832576
+0.829886
+0.834735
+0.746818
+0.757689
+0.853750
+0.783333
+0.748636
+0.843258
+0.756136
+0.904621
+0.783826
+0.907652
+0.792803
+0.774129
+0.973220
+0.808523
+0.794129
+0.748220
+0.835644
+0.788939
+0.823030
+0.775682
+0.786174
+0.750871
+0.760152
+0.912462
+0.847462
+0.830455
+0.791705
+0.832311
+0.831553
+0.790076
+0.850833
+0.851932
+0.750530
+0.925152
+0.781932
+0.815341
+0.854015
+0.798674
+0.778712
+0.718750
+0.789583
+0.849659
+0.800682
+0.749848
+0.830114
+0.704167
+0.831629
+0.818902
+0.755682
+0.854697
+0.756174
+0.692992
+0.823523
+0.752841
+0.753068
+0.881894
+0.807045
+0.880455
+0.846477
+0.921742
+0.849470
+0.876515
+0.901288
+0.841212
+0.824583
+0.750795
+0.822727
+0.844848
+0.800947
+0.806477
+0.827841
+0.810871
+0.839848
+0.841742
+0.776667
+0.885303
+0.752045
+0.835152
+0.768182
+0.836439
+0.876250
+0.791894
+0.816212
+0.768750
+0.836591
+0.792424
+0.778485
+0.868598
+0.846174
+0.782348
+0.863674
+0.754432
+0.826326
+0.745492
+0.896515
+0.694394
+0.806553
+0.783712
+0.830189
+0.785152
+0.835076
+0.882462
+0.817992
+0.801174
+0.941780
+0.906174
+0.788295
+0.773295
+0.768902
+0.823371
+0.755871
+0.948598
+0.797765
+0.784583
+0.822879
+0.777348
+0.834432
+0.835189
+0.830720
+0.742727
+0.767235
+0.829129
+0.882348
+0.898447
+0.806174
+0.750303
+0.823485
+0.786212
+0.812879
+0.727727
+0.809621
+0.929848
+0.806174
+0.817992
+0.818826
+0.802235
+0.774545
+0.667803
+0.840152
+0.799053
+0.797803
+0.764394
+0.816932
+End of array.
+Energy
+0.812952
+Finish 5001000 iterations at Tue Nov 22 16:18:10 2022
+

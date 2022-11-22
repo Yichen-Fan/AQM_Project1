@@ -22,7 +22,7 @@ int count_non_zero(int N_size, int *wldline){
     return num;
 }
 
-double cal_energy(int totsize, double beta, int num, int *forward){
+double cal_energy(int totsize, double beta, double epsilon, int *forward){
     int hop = 0;
     int noHop = 0;
     //int totsize; // = N_size * N_size * N_size;
@@ -47,12 +47,19 @@ double cal_energy(int totsize, double beta, int num, int *forward){
             case -3:
                 hop++;
                 break;
+            case 4:
+                noHop++;
+                break;
+            case -4:
+                noHop++;
+                break;
             default:
                 break;
         }
     }
-    double energy = -(double) (hop / beta) + 6 * num;
-    return energy;
+    int tsteps = beta / epsilon;
+    double energy = -(double) (hop / beta) + 6 * (noHop/ ((1 - 6 * epsilon) * tsteps)); // Update the algoriothm for energy calcualtion. This equation only true for epsilon -> 0 case.
+    return energy; // Also update the calculation of error bar. It should be e = sigma/ root(N)
 }
 
 void print_arr(int size, double* pArr, char* pstr){

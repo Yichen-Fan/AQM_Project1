@@ -2,6 +2,6 @@ N_size 2
 beta 12
 epsilon 0.01
 mu 1.4
-nSweep 10
-nWait 100
-BlockSize 100
+nSweep 1000
+nWait 1000
+BlockSize 5000

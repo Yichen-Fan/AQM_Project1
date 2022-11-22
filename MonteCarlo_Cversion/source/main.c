@@ -63,7 +63,7 @@ int main(int argc, char *argv[]) {
             int number;
             monte(N_size, Ntime, epsilon, mu, table, forward, backward);
             number = count_non_zero(N_size, forward);
-            ene = cal_energy(totsize, beta, number, backward);
+            ene = cal_energy(totsize, beta, epsilon, forward);
             num += number;
             energy += ene;
         }
