@@ -3,6 +3,7 @@
 //
 #include "util.h"
 #include <stdio.h>
+#include <math.h>
 
 double RANDF(){
     return (double) (rand() % RAND_MAX) / RAND_MAX;
@@ -69,3 +70,21 @@ void print_arr(int size, double* pArr, char* pstr){
     }
     printf("End of array.\n");
 }
+
+double calculatemean(double *Arr, int size){
+    double sum = 0;
+    for (int i = 0; i < size; i++){
+        sum += Arr[i];
+    }
+    return (double) sum / size;
+}
+
+double calculateSD(double *Arr, int size){
+    double mean = calculatemean(Arr,size);
+    double nvar = 0;
+    for (int i = 0; i < size; i++){
+        nvar += (Arr[i]-mean)*(Arr[i]-mean);
+    }
+    return (double) sqrt(nvar / size);
+}
+

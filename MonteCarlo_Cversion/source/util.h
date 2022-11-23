@@ -39,4 +39,11 @@ double cal_energy(int N_size, double beta, double epsilon, int *forward);
  * print_arr: print given array. Note only work for double array.
  */
 void print_arr(int size, double* pArr, char* pstr);
-
+/*
+ * calculatemean: Calculate mean given a array of number
+ */
+double calculatemean(double *Arr, int size);
+/*
+ * calculateSD: Calculate standard deviation given a array of number
+ */
+double calculateSD(double *Arr, int size);
