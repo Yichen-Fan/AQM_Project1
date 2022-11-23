@@ -7,3 +7,6 @@
 
 #endif //MONTECARLO_CVERSION_SUSPECT_H
 
+void generate_index(int direction, int N_size, int *slice);
+
+int susceptibility(int direction, int tsteps, int N_size, int *slice, int *forward);

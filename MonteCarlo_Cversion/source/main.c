@@ -2,6 +2,7 @@
 #include "worldline.h"
 #include "read_inp.h"
 #include "map.h"
+#include "suspect.h"
 
 int main(int argc, char *argv[]) {
     time_t ltime = time(NULL);
@@ -21,7 +22,7 @@ int main(int argc, char *argv[]) {
     int *table;
     table = calloc(N_size * N_size * N_size * 7, sizeof(int));
     prep_map(N_size, table);
-    for (int row = 0; row < 8; row++) {
+    for (int row = 0; row < N_size * N_size * N_size; row++) {
          for (int col = 0; col < 7; col++) {
               printf("%d  ", table[row * 7 + col]);
          }
@@ -41,12 +42,20 @@ int main(int argc, char *argv[]) {
     forward = calloc(totsize, sizeof(int));
     int direction = 0;
 
+    int *slice = NULL;
+    slice = calloc(3 * N_size * N_size, sizeof(int));
+    for (int dim = 0; dim < 3; dim++){
+        generate_index(dim, N_size, slice + dim * N_size * N_size);
+    }
 
+    int winding2 = 0; // The squared winding number over all time;
 
     // Define and calloc space for array
     double* numArrMean;
     double* eneArrMean;
+    double* susArrMean;
     double energy_sum = 0;
+    susArrMean = calloc(nSweep * 3, sizeof(double));
     numArrMean = calloc(nSweep, sizeof(double));
     eneArrMean = calloc(nSweep, sizeof(double));
 
@@ -58,14 +67,23 @@ int main(int argc, char *argv[]) {
         fflush(stdout);
         double num = 0;
         double energy = 0;
+        int sus[3] = {0, 0, 0};
         for (int g = 0; g < BlockSize; g++) {
             double ene;
             int number;
             monte(N_size, Ntime, epsilon, mu, table, forward, backward);
             number = count_non_zero(N_size, forward);
             ene = cal_energy(totsize, beta, epsilon, forward);
+            for (int dir = 0; dir < 3; dir++) {
+                sus[dir] += susceptibility(dir, Ntime, N_size, slice, forward);
+                printf("%d\n", sus[dir]);
+            }
+
             num += number;
             energy += ene;
+        }
+        for (int dir = 0; dir < 3; dir++) {
+            susArrMean[b + dir * nSweep] = (double) sus[dir] / BlockSize;
         }
         numArrMean[b] = num / BlockSize;
         eneArrMean[b] = energy / BlockSize;
@@ -78,12 +96,15 @@ int main(int argc, char *argv[]) {
     fflush(stdout);
     print_arr(nSweep, eneArrMean, "Energy");
     fflush(stdout);
+    print_arr(nSweep * 3, susArrMean, "Susceptibility");
     printf("Energy\n");
     printf("%f\n", energy_sum / nSweep);
 
     ltime = time(NULL);
     printf("Finish %d iterations at %s\n", nWait + nSweep * BlockSize, asctime(localtime(&ltime)));
 
+    free(slice);
+    free(susArrMean);
     free(backward);
     free(numArrMean);
     free(eneArrMean);
