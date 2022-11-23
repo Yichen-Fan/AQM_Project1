@@ -2,7 +2,7 @@
 // Created by Ethan  Fan  on 11/21/22.
 //
 
-#include "suspect.h"
+#include "susceptibility.h"
 
 void generate_index(int direction, int N_size, int *slice) {
     switch (direction){

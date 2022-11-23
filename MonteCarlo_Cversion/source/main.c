@@ -2,7 +2,7 @@
 #include "worldline.h"
 #include "read_inp.h"
 #include "map.h"
-#include "suspect.h"
+#include "susceptibility.h"
 
 int main(int argc, char *argv[]) {
     time_t ltime = time(NULL);
