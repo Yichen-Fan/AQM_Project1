@@ -24,9 +24,9 @@ int main(int argc, char *argv[]) {
     prep_map(N_size, table);
     for (int row = 0; row < N_size * N_size * N_size; row++) {
          for (int col = 0; col < 7; col++) {
-              printf("%d  ", table[row * 7 + col]);
+     //         printf("%d  ", table[row * 7 + col]);
          }
-         printf("\n");
+    //     printf("\n");
     }
     int *backward = NULL;
     int Ntime = (int) (beta / epsilon);
@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
             ene = cal_energy(totsize, beta, epsilon, forward);
             for (int dir = 0; dir < 3; dir++) {
                 sus[dir] += susceptibility(dir, Ntime, N_size, slice, forward);
-                printf("%d\n", sus[dir]);
+              //  printf("%d\n", sus[dir]);
             }
 
             num += number;
@@ -84,6 +84,7 @@ int main(int argc, char *argv[]) {
         }
         for (int dir = 0; dir < 3; dir++) {
             susArrMean[b + dir * nSweep] = (double) sus[dir] / BlockSize;
+            
         }
         numArrMean[b] = num / BlockSize;
         eneArrMean[b] = energy / BlockSize;
