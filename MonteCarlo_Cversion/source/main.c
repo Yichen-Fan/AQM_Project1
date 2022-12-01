@@ -75,7 +75,10 @@ int main(int argc, char *argv[]) {
             number = count_non_zero(N_size, forward);
             ene = cal_energy(totsize, beta, epsilon, forward);
             for (int dir = 0; dir < 3; dir++) {
-                sus[dir] += susceptibility(dir, Ntime, N_size, slice, forward);
+                int winding =0;
+                winding = susceptibility(dir, Ntime, N_size, slice, forward);
+                sus[dir] = winding * winding /beta / N_size / BlockSize;
+                // sus[dir] += susceptibility(dir, Ntime, N_size, slice, forward);
               //  printf("%d\n", sus[dir]);
             }
 
@@ -83,7 +86,7 @@ int main(int argc, char *argv[]) {
             energy += ene;
         }
         for (int dir = 0; dir < 3; dir++) {
-            susArrMean[b + dir * nSweep] = (double) sus[dir] / BlockSize;
+            susArrMean[b + dir * nSweep] = (double) sus[dir];
             
         }
         numArrMean[b] = num / BlockSize;

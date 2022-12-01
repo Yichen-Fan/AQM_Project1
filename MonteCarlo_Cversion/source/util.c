@@ -66,7 +66,7 @@ double cal_energy(int totsize, double beta, double epsilon, int *forward){
 void print_arr(int size, double* pArr, char* pstr){
     printf("%s:\n", pstr);
     for (int i = 0; i < size; i++){
-        printf("%7f\n", pArr[i]);
+        printf("%15f\n", pArr[i]);
     }
     printf("End of array.\n");
 }
