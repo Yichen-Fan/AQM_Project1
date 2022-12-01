@@ -5,6 +5,7 @@
 #include "susceptibility.h"
 
 void generate_index(int direction, int N_size, int *slice) {
+    direction = direction;
     switch (direction){
         case 0:
             for (int y = 0; y < N_size; y++) {
