@@ -67,7 +67,7 @@ int main(int argc, char *argv[]) {
         fflush(stdout);
         double num = 0;
         double energy = 0;
-        int sus[3] = {0, 0, 0};
+        double sus[3] = {0, 0, 0};
         for (int g = 0; g < BlockSize; g++) {
             double ene;
             int number;
@@ -96,13 +96,20 @@ int main(int argc, char *argv[]) {
     printf("Current epsilon value: %5f\n", epsilon);
     printf("Current lattice size: %d\n", N_size);
     printf("Current chemical potential: %3f\n", mu);
-    print_arr(nSweep, numArrMean, "Particle number");
+    // print_arr(nSweep, numArrMean, "Particle number");
     fflush(stdout);
-    print_arr(nSweep, eneArrMean, "Energy");
+    // print_arr(nSweep, eneArrMean, "Energy");
     fflush(stdout);
-    print_arr(nSweep * 3, susArrMean, "Susceptibility");
-    printf("Energy\n");
-    printf("%f\n", energy_sum / nSweep);
+    // print_arr(nSweep * 3, susArrMean, "Susceptibility");
+    double numAvg = calculatemean(numArrMean, nSweep);
+    double numSD = calculateSD(numArrMean, nSweep);
+    double susAvg = calculatemean(susArrMean, nSweep);
+    double susSD = calculateSD(susArrMean, nSweep);
+    printf("Particle number average: %15f\n", numAvg);
+    printf("Particle number standard deviation: %15f\n", numSD);
+    printf("Susceptibility average: %15f\n", susAvg);
+    printf("Susceptibility standard deviation: %15f\n", susSD);
+
 
     ltime = time(NULL);
     printf("Finish %d iterations at %s\n", nWait + nSweep * BlockSize, asctime(localtime(&ltime)));
