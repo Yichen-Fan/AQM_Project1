@@ -1,36 +1,36 @@
-b0.75.out:Susceptibility standard deviation:        0.000643
-b0.76.out:Susceptibility standard deviation:        0.000641
-b0.77.out:Susceptibility standard deviation:        0.000815
-b0.78.out:Susceptibility standard deviation:        0.000886
-b0.79.out:Susceptibility standard deviation:        0.000990
-b0.80.out:Susceptibility standard deviation:        0.001128
-b0.81.out:Susceptibility standard deviation:        0.001259
-b0.82.out:Susceptibility standard deviation:        0.001412
-b0.83.out:Susceptibility standard deviation:        0.001650
-b0.84.out:Susceptibility standard deviation:        0.001867
-b0.85.out:Susceptibility standard deviation:        0.002055
-b0.86.out:Susceptibility standard deviation:        0.002405
-b0.87.out:Susceptibility standard deviation:        0.002834
-b0.88.out:Susceptibility standard deviation:        0.003152
-b0.89.out:Susceptibility standard deviation:        0.003690
-b0.90.out:Susceptibility standard deviation:        0.004189
-b0.91.out:Susceptibility standard deviation:        0.004630
-b0.92.out:Susceptibility standard deviation:        0.005294
-b0.93.out:Susceptibility standard deviation:        0.005609
-b0.94.out:Susceptibility standard deviation:        0.005550
-b0.95.out:Susceptibility standard deviation:        0.006463
-b0.96.out:Susceptibility standard deviation:        0.006732
-b0.97.out:Susceptibility standard deviation:        0.007076
-b0.98.out:Susceptibility standard deviation:        0.007420
-b0.99.out:Susceptibility standard deviation:        0.007584
-b1.00.out:Susceptibility standard deviation:        0.007778
-b1.01.out:Susceptibility standard deviation:        0.008123
-b1.02.out:Susceptibility standard deviation:        0.008585
-b1.03.out:Susceptibility standard deviation:        0.008529
-b1.04.out:Susceptibility standard deviation:        0.008986
-b1.05.out:Susceptibility standard deviation:        0.009167
-b1.06.out:Susceptibility standard deviation:        0.009169
-b1.07.out:Susceptibility standard deviation:        0.009514
-b1.08.out:Susceptibility standard deviation:        0.009662
-b1.09.out:Susceptibility standard deviation:        0.009687
-b1.10.out:Susceptibility standard deviation:        0.009711
+0.75  0.000643
+0.76  0.000641
+0.77  0.000815
+0.78  0.000886
+0.79  0.000990
+0.80  0.001128
+0.81  0.001259
+0.82  0.001412
+0.83  0.001650
+0.84  0.001867
+0.85  0.002055
+0.86  0.002405
+0.87  0.002834
+0.88  0.003152
+0.89  0.003690
+0.90  0.004189
+0.91  0.004630
+0.92  0.005294
+0.93  0.005609
+0.94  0.005550
+0.95  0.006463
+0.96  0.006732
+0.97  0.007076
+0.98  0.007420
+0.99  0.007584
+1.00  0.007778
+1.01  0.008123
+1.02  0.008585
+1.03  0.008529
+1.04  0.008986
+1.05  0.009167
+1.06  0.009169
+1.07  0.009514
+1.08  0.009662
+1.09  0.009687
+1.10  0.009711
