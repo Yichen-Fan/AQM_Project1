@@ -3,6 +3,7 @@
 //
 
 #include "susceptibility.h"
+#include "stdio.h"
 
 void generate_index(int direction, int N_size, int *slice) {
     direction = direction;
@@ -35,20 +36,22 @@ void generate_index(int direction, int N_size, int *slice) {
 
 int susceptibility(int direction, int tsteps, int N_size, int *slice, int *forward) {
     int index = 0;
-    int ndirection = direction * -1;
-    int winding = 0;
+    int pdirection = direction + 1;
+    int ndirection = pdirection * -1;
+    int pwinding = 0;
+    int nwinding = 0;
     int N_size2 = N_size * N_size;
     int N_size3 = N_size * N_size2;
     for (int t = 0; t < tsteps; t++) {
         for (int i = 0; i < N_size2; i++){
             index = t * N_size3;
             index += slice[i + direction * N_size2];
-            if (forward[index] == direction + 1) {
-                winding++;
-            } else if(forward[index] == ndirection - 1) {
-                winding--;
+            if (forward[index] == pdirection) {
+                pwinding++;
+            } else if(forward[index] == ndirection) {
+                nwinding--;
             }
         }
     }
-    return winding;
+    return pwinding + nwinding;
 }

@@ -3,11 +3,15 @@
 #include "read_inp.h"
 #include "map.h"
 #include "susceptibility.h"
+#include <math.h>
 
 int main(int argc, char *argv[]) {
     time_t ltime = time(NULL);
     printf("Starting for quantum Monte Carlo simulation at %s\n",asctime(localtime(&ltime)));
-    srand(time(NULL)); // Generate random seed with time.
+    srand(time(NULL)*time(NULL)%(time(NULL) + 52353235)); // Generate random seed with time.
+
+
+    // printf("%")
 
     // Define
     int N_size;
@@ -22,12 +26,6 @@ int main(int argc, char *argv[]) {
     int *table;
     table = calloc(N_size * N_size * N_size * 7, sizeof(int));
     prep_map(N_size, table);
-    for (int row = 0; row < N_size * N_size * N_size; row++) {
-         for (int col = 0; col < 7; col++) {
-     //         printf("%d  ", table[row * 7 + col]);
-         }
-    //     printf("\n");
-    }
     int *backward = NULL;
     int Ntime = (int) (beta / epsilon);
     int totsize = (int) (beta / epsilon) * N_size * N_size * N_size;
@@ -65,29 +63,34 @@ int main(int argc, char *argv[]) {
     for (int b = 0; b < nSweep; b++) {
         printf("Start new group. Now the group number is %d\n", b);
         fflush(stdout);
+        srand(time(NULL)*time(NULL)%(time(NULL) + 52353235));
         double num = 0;
         double energy = 0;
+        double susce = 0;
         double sus[3] = {0, 0, 0};
+        int wind[3] = {0,0,0};
         for (int g = 0; g < BlockSize; g++) {
             double ene;
             int number;
             monte(N_size, Ntime, epsilon, mu, table, forward, backward);
             number = count_non_zero(N_size, forward);
-            ene = cal_energy(totsize, beta, epsilon, forward);
-            for (int dir = 0; dir < 3; dir++) {
-                int winding =0;
-                winding = susceptibility(dir, Ntime, N_size, slice, forward);
-                sus[dir] = winding * winding /beta / N_size / BlockSize;
-                // sus[dir] += susceptibility(dir, Ntime, N_size, slice, forward);
-              //  printf("%d\n", sus[dir]);
+            int number2 = count_non_zero(N_size, forward + N_size * N_size * N_size);
+            if (number != number2) {
+                printf("ERROR\n");
             }
-
+            ene = cal_energy(totsize, beta, epsilon, forward, wind);
             num += number;
             energy += ene;
+            for (int dir = 0; dir < 3; dir++) {
+                // int winding =0;
+                // winding = susceptibility(dir, Ntime, N_size, slice, forward);
+                sus[dir] += wind[dir] * wind[dir] / beta / N_size;
+                // sus[dir] += susceptibility(dir, Ntime, N_size, slice, forward);
+                // printf("%d\n", sus[dir]);
+            }
         }
         for (int dir = 0; dir < 3; dir++) {
-            susArrMean[b + dir * nSweep] = (double) sus[dir];
-            
+            susArrMean[b + dir * nSweep] = (double) sus[dir] / BlockSize;
         }
         numArrMean[b] = num / BlockSize;
         eneArrMean[b] = energy / BlockSize;
@@ -103,10 +106,14 @@ int main(int argc, char *argv[]) {
     // print_arr(nSweep * 3, susArrMean, "Susceptibility");
     double numAvg = calculatemean(numArrMean, nSweep);
     double numSD = calculateSD(numArrMean, nSweep);
-    double susAvg = calculatemean(susArrMean, nSweep);
-    double susSD = calculateSD(susArrMean, nSweep);
+    double susAvg = calculatemean(susArrMean, 3 * nSweep);
+    double susSD = calculateSD(susArrMean, 3 * nSweep);
+    double eneAvg = calculatemean(eneArrMean, nSweep);
+    double eneSD = calculateSD(eneArrMean, nSweep);
     printf("Particle number average: %15f\n", numAvg);
     printf("Particle number standard deviation: %15f\n", numSD);
+    printf("Energy average: %15f\n", eneAvg);
+    printf("Energy standard deviation: %15f\n", eneSD);
     printf("Susceptibility average: %15f\n", susAvg);
     printf("Susceptibility standard deviation: %15f\n", susSD);
 

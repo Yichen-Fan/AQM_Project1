@@ -10,13 +10,13 @@ int move(double epsilon) {
     if (frand < epsilon) {
         direction = 1;
     } else if (frand < 2 * epsilon) {
-        direction = -1;
-    } else if (frand < 3 * epsilon) {
         direction = 2;
-    } else if (frand < 4 * epsilon) {
-        direction = -2;
-    } else if (frand < 5 * epsilon) {
+    } else if (frand < 3 * epsilon) {
         direction = 3;
+    } else if (frand < 4 * epsilon) {
+        direction = -1;
+    } else if (frand < 5 * epsilon) {
+        direction = -2;
     } else if (frand < 6 * epsilon) {
         direction = -3;
     }
@@ -102,9 +102,11 @@ void reverse(int direction, int N_size, int Ntime, int *pindex, int *table) {
 void monte(int N_size, int Ntime, double epsilon, double mu, int *table, int *forward, int *backward) {
     int totsize = N_size * N_size * N_size * Ntime;
     int index = random_start(totsize);
+    int initial = index;
     int arrow;
     if (forward[index]) {
         arrow = 0;
+        initial *= -1;
     } else {
         arrow = 1;
     }
@@ -115,16 +117,17 @@ void monte(int N_size, int Ntime, double epsilon, double mu, int *table, int *fo
         // i++;
         if (arrow) {
             direction = move(epsilon);
-            forward[index] =
-                    direction;
-            update(direction, N_size, Ntime,
-                   &index, table);
+            forward[index] = direction;
+            update(direction, N_size, Ntime,&index, table);
             if (backward[index]) {
                 collision = backward[index];
                 arrow = 0;
             }
             backward[index] = - direction;
             if (!collision && forward[index]) {
+                // break;
+            }
+            if (index == initial) {
                 break;
             }
         } else {
@@ -133,7 +136,7 @@ void monte(int N_size, int Ntime, double epsilon, double mu, int *table, int *fo
             }
             if (collision) {
                 direction = collision;
-                collision = 0;
+                collision = 0; // If collision happened last time.
             } else {
                 direction = backward[index];
                 backward[index] = 0;

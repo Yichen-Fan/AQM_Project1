@@ -34,7 +34,7 @@ int count_non_zero(int N_size, int *wldline);
  * forward: input. Configuration;
  * double return: energy of given configuration;
  */
-double cal_energy(int N_size, double beta, double epsilon, int *forward);
+double cal_energy(int N_size, double beta, double epsilon, int *forward, int *wind);
 /*
  * print_arr: print given array. Note only work for double array.
  */
