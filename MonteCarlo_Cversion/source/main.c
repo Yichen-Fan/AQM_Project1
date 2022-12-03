@@ -22,12 +22,14 @@ int main(int argc, char *argv[]) {
     int nSweep;                 // Total number of groups in the Monte Carlo simulation
     int BlockSize;               // Size of each block. Mean value within block would be calculated
     read_inp(argv[1], &N_size, &beta, &epsilon, &mu, &nWait, &nSweep, &BlockSize);
+    beta += 1E-12;
     printf("Given N_size = %d\nGiven beta = %4f\nGiven epsilon = %4f\nGiven mu = %4f\nGiven Wait time = %d\nGiven Sweep time = %d\nGiven Block size = %d\n", N_size, beta, epsilon, mu, nWait, nSweep, BlockSize);
     int *table;
     table = calloc(N_size * N_size * N_size * 7, sizeof(int));
     prep_map(N_size, table);
     int *backward = NULL;
     int Ntime = (int) (beta / epsilon);
+    printf("Ntime:%d\n", Ntime);
     int totsize = (int) (beta / epsilon) * N_size * N_size * N_size;
     int arrow = 1;      // Direction of time arrow
     int index = 0;      // Index of the flatten index
