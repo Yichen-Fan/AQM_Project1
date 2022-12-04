@@ -29,7 +29,7 @@ double cal_energy(int N_size, double beta, double epsilon, int *forward, int *wi
     int wx = 0;
     int wy = 0;
     int wz = 0;
-    int totsize = N_size * N_size * N_size;
+    int totsize = N_size * N_size * N_size * int (beta / epsilon);
     int i;
     for (i = 0; i < totsize; i++){
         switch (forward[i]) {
