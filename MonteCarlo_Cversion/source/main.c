@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
             if (number != number2) {
                 printf("ERROR\n");
             }
-            ene = cal_energy(totsize, beta, epsilon, forward, wind);
+            ene = cal_energy(N_size, beta, epsilon, forward, wind);
             num += number;
             energy += ene;
             for (int dir = 0; dir < 3; dir++) {

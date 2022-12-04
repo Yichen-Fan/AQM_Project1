@@ -23,13 +23,13 @@ int count_non_zero(int N_size, int *wldline){
     return num;
 }
 
-double cal_energy(int totsize, double beta, double epsilon, int *forward, int *wind){
+double cal_energy(int N_size, double beta, double epsilon, int *forward, int *wind){
     int hop = 0;
     int noHop = 0;
     int wx = 0;
     int wy = 0;
     int wz = 0;
-    //int totsize; // = N_size * N_size * N_size;
+    int totsize = N_size * N_size * N_size;
     int i;
     for (i = 0; i < totsize; i++){
         switch (forward[i]) {
@@ -68,9 +68,9 @@ double cal_energy(int totsize, double beta, double epsilon, int *forward, int *w
         }
     }
     int tsteps = beta / epsilon;
-    wind[0] = wx/20;
-    wind[1] = wy/20;
-    wind[2] = wz/20;
+    wind[0] = wx / N_size;
+    wind[1] = wy / N_size;
+    wind[2] = wz / N_size;
     double energy = -(double) (hop / beta) + 6 * (noHop/ ((1 - 6 * epsilon) * tsteps)); // Update the algoriothm for energy calcualtion. This equation only true for epsilon -> 0 case.
     return energy; // Also update the calculation of error bar. It should be e = sigma/ root(N)
 }
